@@ -12,17 +12,15 @@
 	<div class="menu_bg"></div>
 	<div class="sidebar_menu">
 		<div class="close_btn">
-			<a href="/">
+			<a href="#">
 				<img src="../assets/image/m_close.png" />
 			</a>
 		</div>
 		<ul class="menu_wrap">
-			<li><a>ABOUT US</a></li>
-			<li><a>PARTNER</a></li>
-			<li><a>SMART FACTORY</a></li>
-			<li><a>PROCESS</a></li>
-			<li><a>USE CASE</a></li>
-			<li><a>CONTACT</a></li>
+			<li><a href="/">ABOUT US</a></li>
+			<li><a href="/">SMART FACTORY</a></li>
+			<li><a href="/">USE CASE</a></li>
+			<li><a href="/">CONTACT</a></li>
 		</ul>
 	</div>
 </template>
@@ -31,6 +29,7 @@
 
 <style>
 .header_m {
+	display: none;
 	position: fixed;
 	width: 100%;
 	height: 50px;
@@ -66,10 +65,10 @@
 
 	position: absolute;
 	top: 0;
-	/* display: none; */
+	display: none;
 }
 .sidebar_menu {
-	/* display: none; */
+	display: none;
 	width: 70%;
 	height: 100%;
 	background: #000;
@@ -106,5 +105,11 @@
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+	.header_m {
+		display: block;
+	}
 }
 </style>

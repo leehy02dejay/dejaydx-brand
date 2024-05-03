@@ -1,12 +1,13 @@
 <template>
 	<div class="scroll-line-container">
-		<div class="scroll-text">
-			<div>Scroll</div>
-			<div>down</div>
-		</div>
-		<div>
-			<div class="scroll-line"></div>
-		</div>
+		<ul class="scroll-down-ui">
+			<li class="scroll-line"></li>
+			<li class="scroll-down-text">
+				<div>Scroll</div>
+				<div>down</div>
+			</li>
+		</ul>
+		<div></div>
 	</div>
 </template>
 
@@ -14,27 +15,33 @@
 
 <style>
 .scroll-line-container {
-	margin-top: 11rem;
 	color: white;
-	position: relative;
-	right: 25px;
+	position: absolute;
+	left: 5%;
+	bottom: 5%;
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
 	overflow-y: hidden;
+	width: 200px;
 }
 
-.scroll-text {
+.scroll-down-ui {
 	width: 100px;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 15px;
 	margin-bottom: 20px;
+	display: flex;
+}
+
+.scroll-down-text {
+	margin-top: 5px;
 }
 
 .scroll-line {
-	position: absolute;
-	left: 50%;
-	height: 100%;
+	position: relative;
+	padding-right: 10px;
+	height: 45px;
 	border-left: 2px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -44,8 +51,9 @@
 	left: -2px;
 	top: 0;
 	bottom: 0;
-	width: 3px; /* 테두리 두께 */
-	height: 300px;
+	width: 2px; /* 테두리 두께 */
+	height: 20px;
+
 	background: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0),
@@ -63,7 +71,7 @@
 		top: 0;
 	}
 	100% {
-		top: calc(100% - 400px);
+		top: 55%;
 	}
 }
 

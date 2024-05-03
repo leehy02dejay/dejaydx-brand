@@ -1,6 +1,6 @@
 <template>
 	<div class="mainHome">
-		<MainBanner></MainBanner>
+		<MainBanner bannerImage="/image/main_visual02.jpg"></MainBanner>
 		<ProcessOrder></ProcessOrder>
 		<MainBenefits></MainBenefits>
 	</div>

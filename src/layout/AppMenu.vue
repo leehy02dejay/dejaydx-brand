@@ -1,7 +1,135 @@
 <template>
-	<div></div>
+	<div id="all_menu_warp">
+		<div class="all_menu">
+			<div class="all_menu_top">
+				<div class="all_menu_logo">
+					<a href="/"><img src="images/logo.png" /></a>
+				</div>
+				<div class="all_menu_close">
+					<a href="/"><img src="images/all_menu_close.png" /></a>
+				</div>
+			</div>
+			<div class="all_menu_bottom">
+				<div class="all_menu_data">
+					<div class="all_menu_text01">
+						회사소개서 &nbsp;<a href="/"
+							><img src="images/all_menu_download.png"
+						/></a>
+					</div>
+
+					<div class="all_menu_data01">
+						<p class="all_menu_text02">Address</p>
+						<p class="all_menu_text03">
+							서울시 구로구 디지털로 300 , 12층 (1202호)
+						</p>
+
+						<p class="all_menu_text02">Tel</p>
+						<p class="all_menu_text03">02-1234-1234</p>
+
+						<p class="all_menu_text02">E-mail</p>
+						<p class="all_menu_text03">contact@dejayalpha.co.kr</p>
+					</div>
+				</div>
+				<div class="all_menu_list">
+					<ul>
+						<li><a href="/">ABOUT US</a></li>
+						<li><a href="/">SMART FACTORY</a></li>
+						<li><a href="/">USE CASE</a></li>
+						<li><a href="/">CONTACT</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup></script>
 
-<style lang="scss" scoped></style>
+<style>
+/* #all_menu_warp {
+	position: relative;
+	width: 100%;
+	height: 940px;
+	background: #000;
+	z-index: 9999999999;
+}
+
+.all_menu {
+	width: 1400px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+
+.all_menu_top {
+	width: 100%;
+}
+
+.all_menu_logo {
+	float: left;
+}
+
+.all_menu_close {
+	float: right;
+}
+
+.all_menu_bottom {
+	clear: both;
+	width: 100%;
+	padding-top: 190px;
+}
+
+.all_menu_data {
+	width: 45%;
+	float: left;
+}
+
+.all_menu_list {
+	width: 55%;
+	float: left;
+}
+
+.all_menu_list ul li {
+	font-family: 'GmarketSansMedium', dotum, sans-serif;
+	font-size: 70px;
+	font-weight: bold;
+	color: #fff;
+	padding-top: 40px;
+}
+
+.all_menu_list ul li:nth-child(1) {
+	padding-top: 0px;
+}
+
+.all_menu_list ul li a {
+	color: #fff;
+}
+
+.all_menu_list ul li a:hover {
+	color: #24d2dc;
+}
+
+.all_menu_data01 {
+	padding-top: 240px;
+}
+
+.all_menu_text01 {
+	font-size: 22px;
+	color: #fff;
+}
+
+.all_menu_text02 {
+	font-size: 17px;
+	color: #656565;
+	padding-top: 20px;
+}
+
+.all_menu_text03 {
+	font-size: 17px;
+	color: #fff;
+	padding-top: 10px;
+}
+
+.all_menu_logo a img {
+	filter: grayscale(100%) invert(100%) brightness(200%);
+} */
+</style>

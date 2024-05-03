@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<QuickButton></QuickButton>
-		<div class="header">
+		<AppMobileHeader></AppMobileHeader>
+		<div class="header" :class="{ roll: isScrolled }">
 			<div class="main_top">
 				<div class="logo">
 					<a href="/"><img src="../assets/image/logo.png" /></a>
@@ -24,6 +25,23 @@
 
 <script setup>
 import QuickButton from '@/components/atoms/QuickButton.vue';
+import AppMobileHeader from './AppMobileHeader.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const isScrolled = ref(false);
+
+onMounted(() => {
+	window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+	window.removeEventListener('scroll', handleScroll);
+});
+
+function handleScroll() {
+	const scrollY = window.scrollY;
+	isScrolled.value = scrollY > 0;
+}
 </script>
 
 <style>
@@ -33,8 +51,8 @@ import QuickButton from '@/components/atoms/QuickButton.vue';
 	top: 0;
 	left: 0;
 	z-index: 1000000000;
-	height: 110px;
-	line-height: 55px;
+	height: 65px;
+	line-height: 48px;
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
 	transition: height 0.3s;
@@ -44,8 +62,8 @@ import QuickButton from '@/components/atoms/QuickButton.vue';
 }
 
 .header.roll {
-	height: 110px;
-	line-height: 55px;
+	height: 65px;
+	line-height: 48px;
 	background: #fff;
 	border-bottom: 1px solid #eaeaea;
 }
@@ -77,9 +95,11 @@ import QuickButton from '@/components/atoms/QuickButton.vue';
 
 .header .logo a img {
 	filter: grayscale(100%) invert(100%) brightness(200%);
+	width: 160px;
 }
 .header.roll .logo a img {
 	filter: none;
+	width: 160px;
 }
 
 .header .allmenu_btn a img {
@@ -90,36 +110,35 @@ import QuickButton from '@/components/atoms/QuickButton.vue';
 }
 
 .main_top {
-	width: 1400px;
-	height: 80px;
+	/* padding-top: 10px; */
+	display: flex;
 	margin: 0 auto;
-	padding-top: 20px;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 1400px;
 }
 
 .logo {
-	width: 214px;
-	float: left;
 	padding-top: 5px;
+	width: 214px;
 }
 
 .menu {
-	width: 900px;
-	float: left;
-	padding-top: 10px;
-	margin-left: 100px;
+	padding-top: 11px;
+	width: 600px;
 }
 
 .menu ul li {
 	font-family: 'GmarketSansMedium', dotum, sans-serif;
-	font-size: 17px;
+	font-size: 14px;
 	font-weight: bold;
 	color: #3d4c2a;
 	float: left;
-	width: 25%;
 	text-align: center;
 }
 
 .menu ul li a {
+	margin-right: 50px;
 	color: #fff;
 }
 .menu ul li a:hover {
@@ -127,7 +146,40 @@ import QuickButton from '@/components/atoms/QuickButton.vue';
 }
 
 .allmenu_btn {
-	float: right;
 	padding-top: 10px;
+}
+
+@media (max-width: 1400px) and (min-width: 1024px) {
+	.logo a img {
+		width: 150px;
+	}
+	.menu ul li {
+		font-size: 0.9rem;
+	}
+
+	.menu ul li a {
+		margin-right: 35px;
+		color: #fff;
+	}
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+	.logo a img {
+		width: 120px;
+	}
+	.menu ul li {
+		font-size: 0.7em;
+	}
+
+	.menu ul li a {
+		margin-right: 30px;
+		color: #fff;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		display: none;
+	}
 }
 </style>
