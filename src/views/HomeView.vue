@@ -1,15 +1,13 @@
 <template>
 	<div class="mainHome">
-		<MainBanner bannerImage="/image/main_visual02.jpg"></MainBanner>
-		<ProcessOrder></ProcessOrder>
+		<MainFullPageScroll></MainFullPageScroll>
 		<MainBenefits></MainBenefits>
 	</div>
 </template>
 
 <script setup>
-import MainBanner from '@/components/main/MainBanner.vue';
-import MainBenefits from '@/components/main/MainBenefits.vue';
-import ProcessOrder from '@/components/main/process/ProcessOrder.vue';
+import MainFullPageScroll from '@/components/main/MainFullPageScroll.vue';
+// import MainBenefits from '@/components/main/MainBenefits.vue';
 </script>
 
 <style scoped>
@@ -19,5 +17,6 @@ import ProcessOrder from '@/components/main/process/ProcessOrder.vue';
 	position: absolute;
 	top: 0;
 	left: 0;
+	overflow-y: scroll;
 }
 </style>

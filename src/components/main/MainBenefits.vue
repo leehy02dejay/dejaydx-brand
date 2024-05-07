@@ -107,6 +107,7 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 
 <style>
 #main_con02_warp {
+	position: absolute;
 	clear: both;
 	width: 100%;
 	height: 100vh;

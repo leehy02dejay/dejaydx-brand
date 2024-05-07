@@ -1,5 +1,5 @@
 <template>
-	<div class="banner-container" id="section1">
+	<swiper-slide class="banner-container" id="section1">
 		<div
 			id="main_visual_warp"
 			:style="{ backgroundImage: 'url(' + props.bannerImage + ')' }"
@@ -26,12 +26,13 @@
 				<img src="../../assets/image/arrow_right.png" />
 			</div>
 		</div>
-	</div>
+	</swiper-slide>
 </template>
 
 <script setup>
 import ScrollTwinkle from '@/components/atoms/ScrollTwinkle.vue';
 import { defineProps } from 'vue';
+import { SwiperSlide } from 'swiper/vue';
 const props = defineProps({
 	bannerImage: String,
 });

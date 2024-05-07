@@ -1,5 +1,5 @@
 <template>
-	<div id="main_con01_warp">
+	<swiper-slide id="main_con01_warp" class="">
 		<div class="main_con01_title">
 			<p class="main_con01_text01">SERVICE PROCESS</p>
 			<p class="main_con01_text02">
@@ -15,43 +15,50 @@
 		<div class="main_con01">
 			<img src="../../../assets/image/main_con01-1.png" />
 		</div>
-	</div>
+	</swiper-slide>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import Aos from 'aos';
-const hasScrolled = ref(false);
-const scrollTop = ref(0);
+import { SwiperSlide } from 'swiper/vue';
 
-function handleScroll() {
-	scrollTop.value = document.documentElement.scrollTop;
+// import { onMounted } from 'vue';
+// import Aos from 'aos';
+// const hasScrolled = ref(false);
+// const scrollTop = ref(0);
 
-	if (scrollTop.value > 0) {
-		if (!hasScrolled.value) {
-			hasScrolled.value = true;
+// function handleScroll() {
+// 	scrollTop.value = document.documentElement.scrollTop;
 
-			window.scrollTo({
-				top: window.innerHeight + 3,
-				behavior: 'smooth',
-			});
+// 	if (scrollTop.value > 0) {
+// 		if (!hasScrolled.value) {
+// 			hasScrolled.value = true;
 
-			setTimeout(() => {
-				Aos.init({
-					once: true,
-					offset: 500,
-				});
-			}, 1000);
-		}
-	}
-}
-onMounted(() => {
-	window.addEventListener('scroll', handleScroll, { passive: true });
-});
+// 			window.scrollTo({
+// 				top: window.innerHeight + 3,
+// 				behavior: 'smooth',
+// 			});
 
-onUnmounted(() => {
-	window.removeEventListener('scroll', handleScroll);
-});
+// 			setTimeout(() => {
+// 				Aos.init({
+// 					once: true,
+// 					offset: 500,
+// 				});
+// 			}, 1000);
+// 		}
+// 	}
+// }
+// onMounted(() => {
+// 	window.addEventListener('scroll', handleScroll, { passive: true });
+// 	 new VueFullPage('#fullpage', {
+//       // 옵션 설정
+//       autoScrolling: true,
+//       scrollHorizontally: true,
+// });
+// })
+
+// onUnmounted(() => {
+// 	window.removeEventListener('scroll', handleScroll);
+// });
 </script>
 
 <style>
@@ -70,15 +77,15 @@ onUnmounted(() => {
 }
 
 .main_con01 {
-	width: 100%; /* 부모 요소의 크기를 100%로 설정하여 반응형으로 만듭니다. */
-	display: flex; /* Flexbox를 사용하여 수직 및 수평 중앙 정렬을 쉽게 할 수 있습니다. */
-	justify-content: center; /* 수평 가운데 정렬 */
-	align-items: center; /* 수직 가운데 정렬 */
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main_con01 img {
-	max-width: 75%; /* 이미지의 최대 너비를 부모 요소의 크기에 맞게 설정하여 반응형으로 만듭니다. */
-	height: auto; /* 이미지의 높이를 자동으로 조정하여 비율을 유지합니다. */
+	max-width: 75%;
+	height: auto;
 }
 
 .main_con01_text01 {

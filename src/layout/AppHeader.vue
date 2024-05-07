@@ -40,6 +40,7 @@ onUnmounted(() => {
 
 function handleScroll() {
 	const scrollY = window.scrollY;
+	console.log(window.scrollY);
 	isScrolled.value = scrollY > 0;
 }
 </script>
