@@ -15,7 +15,7 @@
 						<li><a href="/">CONTACT</a></li>
 					</ul>
 				</div>
-				<div class="allmenu_btn">
+				<div class="allmenu_btn" @click="handleOpenMenu">
 					<a href="/"><img src="../assets/image/menu_btn.png" /></a>
 				</div>
 			</div>
@@ -26,7 +26,9 @@
 <script setup>
 import QuickButton from '@/components/atoms/QuickButton.vue';
 import AppMobileHeader from './AppMobileHeader.vue';
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, defineEmits } from 'vue';
+
+const emit = defineEmits(['open']);
 
 const isScrolled = ref(false);
 
@@ -40,8 +42,12 @@ onUnmounted(() => {
 
 function handleScroll() {
 	const scrollY = window.scrollY;
-	console.log(window.scrollY);
 	isScrolled.value = scrollY > 0;
+}
+
+function handleOpenMenu() {
+	// open 이벤트를 true 값과 함께 발생시킵니다.
+	emit('open', true);
 }
 </script>
 
@@ -52,7 +58,7 @@ function handleScroll() {
 	top: 0;
 	left: 0;
 	z-index: 1000000000;
-	height: 65px;
+	height: 85px;
 	line-height: 48px;
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
@@ -63,7 +69,7 @@ function handleScroll() {
 }
 
 .header.roll {
-	height: 65px;
+	height: 85px;
 	line-height: 48px;
 	background: #fff;
 	border-bottom: 1px solid #eaeaea;
@@ -120,26 +126,26 @@ function handleScroll() {
 }
 
 .logo {
-	padding-top: 5px;
+	padding-top: 15px;
 	width: 214px;
 }
 
 .menu {
-	padding-top: 11px;
-	width: 600px;
+	padding-top: 20px;
+	padding-left: 100px;
+	min-width: 980px;
 }
 
 .menu ul li {
 	font-family: 'GmarketSansMedium', dotum, sans-serif;
-	font-size: 14px;
+	font-size: 17px;
 	font-weight: bold;
 	color: #3d4c2a;
 	float: left;
-	text-align: center;
 }
 
 .menu ul li a {
-	margin-right: 50px;
+	margin-right: 90px;
 	color: #fff;
 }
 .menu ul li a:hover {
@@ -147,7 +153,7 @@ function handleScroll() {
 }
 
 .allmenu_btn {
-	padding-top: 10px;
+	padding-top: 15px;
 }
 
 @media (max-width: 1400px) and (min-width: 1024px) {

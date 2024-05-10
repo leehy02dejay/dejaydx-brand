@@ -9,7 +9,7 @@
 			</p>
 		</div>
 		<div class="main_con02">
-			<ul>
+			<ul id="main_con02_list">
 				<li>
 					<img src="../../assets/image/main_con02-1.png" />
 					<p class="main_con02_text01">생산성 향상</p>
@@ -107,7 +107,6 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 
 <style>
 #main_con02_warp {
-	position: absolute;
 	clear: both;
 	width: 100%;
 	height: 100vh;
@@ -116,9 +115,9 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 .main_con02 {
-	width: 1400px;
+	width: 100%;
 	margin: 0 auto;
-	padding-top: 100px;
+	padding-top: 50px;
 }
 
 .main_con02_data {
@@ -126,11 +125,16 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 	text-align: center;
 	padding-top: 10px;
 }
+#main_con02_list {
+	width: 100%;
+	display: flex;
+	text-align: center;
+	margin: 0 auto;
+}
 
 .main_con02 ul li {
-	float: left;
 	width: 16.6666%;
-	height: 320px;
+	height: 10%;
 	border-left: 1px solid #019495;
 	text-align: center;
 	padding-top: 50px;
@@ -141,26 +145,24 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 .main_con02_text01 {
-	font-size: 20px;
+	font-size: 1.2rem;
+	margin-toptop: 5px;
 	color: #fff;
-	padding-top: 20px;
 }
 
 .main_con02_text02 {
-	font-size: 60px;
+	font-size: 4rem;
 	font-weight: bold;
 	color: #24d2dc;
-
 	text-align: center;
 }
 
 .main_con02_text03 {
 	font-size: 23px;
 	color: #24d2dc;
-
 	padding-top: 30px;
 	text-align: center;
-	padding-left: 5px;
+	padding-left: 1px;
 }
 
 .benefits-numbers-wrapper {
@@ -173,5 +175,35 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 	font-size: 45px;
 	text-align: center;
 	margin: 20px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+	.main_con02_text01 {
+		font-size: 1rem;
+		margin-top: 5px;
+		color: #fff;
+	}
+
+	.main_con02_text02 {
+		font-size: 2rem;
+		font-weight: bold;
+		color: #24d2dc;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.main_con02_text01 {
+		font-size: 0.6rem;
+		margin-top: 5px;
+		color: #fff;
+	}
+
+	.main_con02_text02 {
+		font-size: 1rem;
+		font-weight: bold;
+		color: #24d2dc;
+		text-align: center;
+	}
 }
 </style>

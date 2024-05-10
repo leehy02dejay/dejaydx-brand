@@ -1,5 +1,5 @@
 <template>
-	<swiper-slide id="main_con01_warp" class="">
+	<div id="main_con01_warp">
 		<div class="main_con01_title">
 			<p class="main_con01_text01">SERVICE PROCESS</p>
 			<p class="main_con01_text02">
@@ -15,65 +15,93 @@
 		<div class="main_con01">
 			<img src="../../../assets/image/main_con01-1.png" />
 		</div>
-	</swiper-slide>
+		<div class="background-circle" data-aos="zoom-in"></div>
+	</div>
 </template>
 
 <script setup>
-import { SwiperSlide } from 'swiper/vue';
+import { onMounted, ref } from 'vue';
+const hasScrolled = ref(false);
+const scrollTop = ref(0);
 
-// import { onMounted } from 'vue';
-// import Aos from 'aos';
-// const hasScrolled = ref(false);
-// const scrollTop = ref(0);
+function handleScroll() {
+	let scrollY = document.documentElement.scrollTop > 0;
+	if (scrollY > 0) {
+		scrollTop.value = document.documentElement.scrollTop;
+		if (!hasScrolled.value) {
+			const main_con01 = document.querySelector('.background-circle');
+			hasScrolled.value = true;
+			window.scrollTo({
+				top: window.innerHeight,
+				behavior: 'smooth',
+			});
 
-// function handleScroll() {
-// 	scrollTop.value = document.documentElement.scrollTop;
-
-// 	if (scrollTop.value > 0) {
-// 		if (!hasScrolled.value) {
-// 			hasScrolled.value = true;
-
-// 			window.scrollTo({
-// 				top: window.innerHeight + 3,
-// 				behavior: 'smooth',
-// 			});
-
-// 			setTimeout(() => {
-// 				Aos.init({
-// 					once: true,
-// 					offset: 500,
-// 				});
-// 			}, 1000);
-// 		}
-// 	}
-// }
-// onMounted(() => {
-// 	window.addEventListener('scroll', handleScroll, { passive: true });
-// 	 new VueFullPage('#fullpage', {
-//       // 옵션 설정
-//       autoScrolling: true,
-//       scrollHorizontally: true,
-// });
-// })
-
-// onUnmounted(() => {
-// 	window.removeEventListener('scroll', handleScroll);
-// });
+			setTimeout(() => {
+				main_con01.classList.add('active');
+			}, 200);
+		}
+	}
+	if (scrollY === 0) {
+		hasScrolled.value = false;
+	}
+}
+onMounted(() => {
+	window.addEventListener('scroll', handleScroll, { passive: true });
+});
 </script>
 
 <style>
 #main_con01_warp {
 	width: 100%;
 	height: 100vh;
-	background: url('../../../assets/image/main_con01_bg.png') center top;
 	background-size: cover;
+	position: relative; /* 상대적 위치 설정 */
+	overflow: hidden;
 }
 
+.background-circle {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.5); /* 축소 상태에서 시작, Y축 변환을 더 아래로 조정 */
+	width: 45%;
+	height: 100%;
+	background: url('../../../assets/image/main_con01_bg.png') no-repeat center
+		center;
+	background-size: cover;
+	border-radius: 100%; /* 초기에 원형 */
+	z-index: -2;
+	transform-origin: center bottom; /* 확대/축소의 중심점을 중앙 하단으로 설정 */
+}
+
+.background-circle.active {
+	animation: growCircle 0.5s ease-in-out forwards;
+}
+
+@keyframes growCircle {
+	0% {
+		transform: translate(-50%, -50%) scale(1); /* 애니메이션 시작 시 축소된 상태 */
+	}
+	99% {
+		transform: translate(-50%, -50%) scale(1.5);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-radius: 100%;
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1.5);
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		border-radius: 0;
+	}
+}
 .main_con01_title {
-	width: 1400px;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	padding-top: 80px;
+	padding-top: 10%;
 }
 
 .main_con01 {

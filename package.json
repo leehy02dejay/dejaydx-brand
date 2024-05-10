@@ -18,7 +18,9 @@
     "vue": "^3.4.23",
     "vue-countup-v3": "^1.4.1",
     "vue-fullpage.js": "^0.2.17",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vue3-carousel": "^0.3.3",
+    "vueperslides": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

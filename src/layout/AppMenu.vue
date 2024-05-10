@@ -3,17 +3,17 @@
 		<div class="all_menu">
 			<div class="all_menu_top">
 				<div class="all_menu_logo">
-					<a href="/"><img src="images/logo.png" /></a>
+					<a href="/"><img src="/image/logo.png" /></a>
 				</div>
 				<div class="all_menu_close">
-					<a href="/"><img src="images/all_menu_close.png" /></a>
+					<a href="/"><img src="/image/all_menu_close.png" /></a>
 				</div>
 			</div>
 			<div class="all_menu_bottom">
 				<div class="all_menu_data">
 					<div class="all_menu_text01">
 						회사소개서 &nbsp;<a href="/"
-							><img src="images/all_menu_download.png"
+							><img src="/image/all_menu_download.png"
 						/></a>
 					</div>
 
@@ -46,7 +46,7 @@
 <script setup></script>
 
 <style>
-/* #all_menu_warp {
+#all_menu_warp {
 	position: relative;
 	width: 100%;
 	height: 940px;
@@ -131,5 +131,5 @@
 
 .all_menu_logo a img {
 	filter: grayscale(100%) invert(100%) brightness(200%);
-} */
+}
 </style>

@@ -1,56 +1,87 @@
 <template>
-	<swiper-slide class="banner-container" id="section1">
-		<div
-			id="main_visual_warp"
-			:style="{ backgroundImage: 'url(' + props.bannerImage + ')' }"
+	<div class="carousel-container">
+		<Carousel
+			ref="carousel"
+			:breakpoints="breakpoints"
+			:autoplay="3000"
+			id="section1"
+			:wrap-around="true"
 		>
-			<div id="main_text_warp">
-				<div class="main_text">
-					최적화된 스마트팩토리 분석부터 구축까지<br />
-					<span style="font-weight: bold">드제이DX와 함께하세요.</span>
-				</div>
-				<div class="main_text2">
-					스마트팩토리 도입은 올바른 프로세스<span class="br_mobile"></span>
-					분석 설계가 가장 중요합니다.
-				</div>
-				<div class="main_text_btn">CONTACT US</div>
+			<Slide
+				v-for="slide in slides"
+				:key="slide"
+				:style="{
+					backgroundImage: 'url(' + slide.image + ')',
+					backgroundSize: 'cover',
+					height: '100vh',
+				}"
+			>
+			</Slide>
+		</Carousel>
+		<div id="main_text_warp">
+			<div class="main_text">
+				최적화된 스마트팩토리 분석부터 구축까지<br />
+				<span style="font-weight: bold">드제이DX와 함께하세요.</span>
 			</div>
-			<!-- <div class="scroll">
-				<img src="../../assets/image/scroll.png" />
-			</div> -->
-			<ScrollTwinkle></ScrollTwinkle>
-			<div class="arrow_left">
-				<img src="../../assets/image/arrow_left.png" />
+			<div class="main_text2">
+				스마트팩토리 도입은 올바른 프로세스<span class="br_mobile"></span>
+				분석 설계가 가장 중요합니다.
 			</div>
-			<div class="arrow_right">
-				<img src="../../assets/image/arrow_right.png" />
-			</div>
+			<div class="main_text_btn">CONTACT US</div>
+			>
 		</div>
-	</swiper-slide>
+		<ScrollTwinkle></ScrollTwinkle>
+		<div class="arrow_left" @click="prevSlideChange">
+			<img src="../../assets/image/arrow_left.png" />
+		</div>
+		<div class="arrow_right" @click="nextSlideChange">
+			<img src="../../assets/image/arrow_right.png" />
+		</div>
+	</div>
 </template>
 
 <script setup>
 import ScrollTwinkle from '@/components/atoms/ScrollTwinkle.vue';
-import { defineProps } from 'vue';
-import { SwiperSlide } from 'swiper/vue';
-const props = defineProps({
-	bannerImage: String,
-});
+import { Carousel, Slide } from 'vue3-carousel';
+import { ref } from 'vue';
+
+const carousel = ref(null);
+
+const slides = [
+	{
+		title: 'BannerImage1',
+		image: '/image/main_visual01.jpg',
+	},
+	{
+		title: 'BannerImage2',
+		image: '/image/main_visual02.jpg',
+	},
+	{
+		title: 'BannerImage3',
+		image: '/image/main_visual03.jpg',
+	},
+];
+
+const prevSlideChange = () => {
+	carousel.value.prev();
+};
+
+const nextSlideChange = () => {
+	carousel.value.next();
+};
 </script>
 
 <style>
-#main_visual_warp {
-	position: relative;
-	width: 100%;
-	min-height: 100vh;
-	background: center top;
-	background-size: cover;
+#section1 {
+	height: 100vh;
+	overflow-x: hidden;
 }
 
 #main_text_warp {
-	width: 100%;
-	margin: 0 auto;
-	padding-left: 150px;
+	position: absolute;
+	top: 20px;
+	left: 10rem;
+	max-width: 70%;
 }
 
 /* #main_visual_warp {
@@ -62,20 +93,18 @@ const props = defineProps({
 } */
 
 .main_text {
-	width: 100%;
 	font-size: 44px;
 	line-height: 56px;
-	margin: 0 auto;
 	padding-top: 250px;
 	color: #fff;
+	z-index: 9999;
 }
 
 .main_text2 {
-	width: 100%;
 	font-size: 22px;
-	margin: 0 auto;
-	padding-top: 20px;
+	/* margin: 0 auto; */
 	color: #d0d0d0;
+	z-index: 9999;
 }
 
 .main_text_btn {
@@ -90,12 +119,6 @@ const props = defineProps({
 	margin-top: 40px;
 }
 
-.scroll {
-	width: 100%;
-	text-align: center;
-	padding-top: 100px;
-}
-
 .scroll img {
 	width: 5%;
 }
@@ -104,6 +127,7 @@ const props = defineProps({
 	position: absolute;
 	top: 45%;
 	left: 5%;
+	cursor: pointer;
 }
 
 .arrow_left img {
@@ -114,6 +138,7 @@ const props = defineProps({
 	position: absolute;
 	top: 45%;
 	right: 5%;
+	cursor: pointer;
 }
 
 .arrow_right img {
@@ -122,46 +147,41 @@ const props = defineProps({
 
 @media (max-width: 1400px) and (min-width: 1024px) {
 	#main_text_warp {
-		width: 1024px;
-		margin: 0 auto;
-		padding-left: 60px;
+		position: absolute;
+		top: 0;
+		left: 7rem;
 	}
 
-	.main_text {
-		padding-top: 210px;
+	.main_text2 {
+		font-size: 19px;
 	}
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
 	#main_text_warp {
-		width: 768px;
-		margin: 0 auto;
-		padding-left: 55px;
+		position: absolute;
+		top: 0;
 	}
 	.main_text {
-		font-size: 35px;
-		padding-top: 200px;
+		font-size: 32px;
+	}
+
+	.main_text2 {
+		font-size: 15px;
 	}
 }
 
 @media screen and (max-width: 768px) {
 	#main_text_warp {
-		width: 100%;
-		margin: 0 auto;
-		padding-left: 20px;
+		position: absolute;
+		top: 0;
+		max-width: 60%;
 	}
-
 	.main_text {
-		font-size: 30px;
-		padding-top: 145px;
+		font-size: 25px;
 	}
-
-	.arrow_left {
-		display: none;
-	}
-
-	.arrow_right {
-		display: none;
+	.main_text2 {
+		font-size: 13px;
 	}
 }
 </style>
