@@ -1,6 +1,6 @@
 <template>
 	<div class="quick_btn">
-		<a href="/"><img src="../../assets/image/quick_btn.png" /></a>
+		<a href="/"><img src="/image/quick_btn.png" /></a>
 	</div>
 </template>
 

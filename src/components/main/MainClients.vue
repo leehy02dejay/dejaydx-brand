@@ -43,7 +43,7 @@
 #main_con04_warp {
 	width: 100%;
 	height: 940px;
-	background: url('../../assets/image/main_con04_bg.png') center top;
+	background: url('/public/image/main_con04_bg.png') center top;
 	background-size: cover;
 }
 

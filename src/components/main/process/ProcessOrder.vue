@@ -13,7 +13,7 @@
 			</p>
 		</div>
 		<div class="main_con01">
-			<img src="../../../assets/image/main_con01-1.png" />
+			<img src="/image/main_con01-1.png" />
 		</div>
 		<div class="background-circle" data-aos="zoom-in"></div>
 	</div>
@@ -66,8 +66,7 @@ onMounted(() => {
 	transform: translate(-50%, -50%) scale(0.5); /* 축소 상태에서 시작, Y축 변환을 더 아래로 조정 */
 	width: 45%;
 	height: 100%;
-	background: url('../../../assets/image/main_con01_bg.png') no-repeat center
-		center;
+	background: url('/public/image/main_con01_bg.png') no-repeat center center;
 	background-size: cover;
 	border-radius: 100%; /* 초기에 원형 */
 	z-index: -2;
@@ -140,7 +139,7 @@ onMounted(() => {
 	#main_con01_warp {
 		width: 100%;
 		/* height: 740px; */
-		background: url('../../../assets/image/main_con01_bg.png') center top;
+		background: url('/public/image/main_con01_bg.png') center top;
 		background-size: cover;
 	}
 
@@ -187,7 +186,7 @@ onMounted(() => {
 	#main_con01_warp {
 		width: 100%;
 		/* height: 540px; */
-		background: url('../../../assets/image/main_con01_bg.png') center top;
+		background: url('/public/image/main_con01_bg.png') center top;
 		background-size: cover;
 	}
 
@@ -233,7 +232,7 @@ onMounted(() => {
 	#main_con01_warp {
 		width: 100%;
 		/* height: 340px; */
-		background: url('../../../assets/image/main_con01_bg.png') center top;
+		background: url('/public/image/main_con01_bg.png') center top;
 		background-size: cover;
 	}
 

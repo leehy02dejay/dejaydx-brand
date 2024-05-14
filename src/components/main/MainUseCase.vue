@@ -102,7 +102,7 @@ const useCaseContents = [
 	position: relative;
 	width: 100%;
 	min-height: 950px;
-	background: url('../../assets/image/main_con03_bg.png') center top;
+	background: url('/public/image/main_con03_bg.png') center top;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -212,7 +212,7 @@ const useCaseContents = [
 		position: relative;
 		width: 100%;
 		height: 740px;
-		background: url('../../assets/image/main_con03_bg.png') center top;
+		background: url('/public/image/main_con03_bg.png') center top;
 		background-size: cover;
 		overflow-y: hidden;
 	}

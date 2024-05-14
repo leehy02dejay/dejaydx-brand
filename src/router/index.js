@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
-import AboutView from '@/views/AboutView.vue';
+import AboutUsView from '@/views/AboutUsView.vue';
 import NotFound from '@/layout/NotFound.vue';
+import UseCaseView from '@/views/UseCaseView.vue';
+import SmartFactoryView from '@/views/SmartFactoryView.vue';
 
 const routes = [
 	{
@@ -10,19 +12,19 @@ const routes = [
 	},
 	{
 		path: '/aboutUs',
-		component: AboutView,
+		component: AboutUsView,
 	},
 	{
 		path: '/smartFactory',
-		component: AboutView,
+		component: SmartFactoryView,
 	},
 	{
 		path: '/useCase',
-		component: AboutView,
+		component: UseCaseView,
 	},
 	{
 		path: '/contact',
-		component: AboutView,
+		component: AboutUsView,
 	},
 	{
 		path: '/:pathMatch(.*)*',

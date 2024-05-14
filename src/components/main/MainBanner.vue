@@ -32,10 +32,10 @@
 		</div>
 		<ScrollTwinkle></ScrollTwinkle>
 		<div class="arrow_left" @click="prevSlideChange">
-			<img src="../../assets/image/arrow_left.png" />
+			<img src="/image/arrow_left.png" />
 		</div>
 		<div class="arrow_right" @click="nextSlideChange">
-			<img src="../../assets/image/arrow_right.png" />
+			<img src="/image/arrow_right.png" />
 		</div>
 	</div>
 </template>
@@ -88,7 +88,7 @@ const nextSlideChange = () => {
 	position: relative;
 	width: 100%;
 	height: 740px;
-	background: url('../../assets/image/main_visual01.jpg') center top;
+	background: url('/public/image/main_visual01.jpg') center top;
 	background-size: cover;
 } */
 

@@ -35,6 +35,8 @@
 <style>
 #fot_warp {
 	position: relative;
+	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 600px;
 	background: #000;

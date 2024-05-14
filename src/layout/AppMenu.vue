@@ -6,7 +6,7 @@
 					<a href="/"><img src="/image/logo.png" /></a>
 				</div>
 				<div class="all_menu_close">
-					<a href="/"><img src="/image/all_menu_close.png" /></a>
+					<img src="/image/all_menu_close.png" @click="clickedCloseMenu" />
 				</div>
 			</div>
 			<div class="all_menu_bottom">
@@ -32,10 +32,10 @@
 				</div>
 				<div class="all_menu_list">
 					<ul>
-						<li><a href="/">ABOUT US</a></li>
-						<li><a href="/">SMART FACTORY</a></li>
-						<li><a href="/">USE CASE</a></li>
-						<li><a href="/">CONTACT</a></li>
+						<li><a href="/aboutUs">ABOUT US</a></li>
+						<li><a href="/smartFactory">SMART FACTORY</a></li>
+						<li><a href="/useCase">USE CASE</a></li>
+						<li><a href="/contact">CONTACT</a></li>
 					</ul>
 				</div>
 			</div>
@@ -43,15 +43,24 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['close']);
+
+function clickedCloseMenu() {
+	emit('close');
+}
+</script>
 
 <style>
 #all_menu_warp {
-	position: relative;
+	position: fixed;
 	width: 100%;
-	height: 940px;
+	height: 100vh;
 	background: #000;
 	z-index: 9999999999;
+	overflow: hidden;
 }
 
 .all_menu {
@@ -72,10 +81,13 @@
 	float: right;
 }
 
+.all_menu_close img {
+	cursor: pointer;
+}
+
 .all_menu_bottom {
 	clear: both;
 	width: 100%;
-	padding-top: 190px;
 }
 
 .all_menu_data {
@@ -115,6 +127,7 @@
 .all_menu_text01 {
 	font-size: 22px;
 	color: #fff;
+	padding-top: 20px;
 }
 
 .all_menu_text02 {

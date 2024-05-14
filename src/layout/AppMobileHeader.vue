@@ -1,11 +1,11 @@
 <template>
 	<div class="header_m">
 		<div class="menu_logo">
-			<a href="/"><img src="../assets/image/m_logo.png" /></a>
+			<a href="/"><img src="/image/m_logo.png" /></a>
 		</div>
 		<div class="menu_btn">
 			<a href="/">
-				<img src="../assets/image/m_menu.png" />
+				<img src="/image/m_menu.png" />
 			</a>
 		</div>
 	</div>
@@ -13,7 +13,7 @@
 	<div class="sidebar_menu">
 		<div class="close_btn">
 			<a href="#">
-				<img src="../assets/image/m_close.png" />
+				<img src="/image/m_close.png" />
 			</a>
 		</div>
 		<ul class="menu_wrap">
@@ -31,6 +31,8 @@
 .header_m {
 	display: none;
 	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 50px;
 	background: #000;

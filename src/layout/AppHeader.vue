@@ -5,18 +5,18 @@
 		<div class="header" :class="{ roll: isScrolled }">
 			<div class="main_top">
 				<div class="logo">
-					<a href="/"><img src="../assets/image/logo.png" /></a>
+					<a href="/"><img src="/image/logo.png" /></a>
 				</div>
 				<div class="menu">
 					<ul>
-						<li><a href="/">ABOUT US</a></li>
-						<li><a href="/">SMART FACTORY</a></li>
-						<li><a href="/">USE CASE</a></li>
-						<li><a href="/">CONTACT</a></li>
+						<li><a href="/aboutUs">ABOUT US</a></li>
+						<li><a href="/smartFactory">SMART FACTORY</a></li>
+						<li><a href="/useCase">USE CASE</a></li>
+						<li><a href="/contact">CONTACT</a></li>
 					</ul>
 				</div>
 				<div class="allmenu_btn" @click="handleOpenMenu">
-					<a href="/"><img src="../assets/image/menu_btn.png" /></a>
+					<img src="/image/menu_btn.png" />
 				</div>
 			</div>
 		</div>
@@ -46,8 +46,7 @@ function handleScroll() {
 }
 
 function handleOpenMenu() {
-	// open 이벤트를 true 값과 함께 발생시킵니다.
-	emit('open', true);
+	emit('open');
 }
 </script>
 
@@ -109,11 +108,13 @@ function handleOpenMenu() {
 	width: 160px;
 }
 
-.header .allmenu_btn a img {
+.header .allmenu_btn img {
+	cursor: pointer;
 	filter: grayscale(100%) invert(100%) brightness(200%);
 }
-.header.roll .allmenu_btn a img {
+.header.roll .allmenu_btn img {
 	filter: none;
+	cursor: pointer;
 }
 
 .main_top {

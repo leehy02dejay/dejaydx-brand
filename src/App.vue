@@ -1,6 +1,6 @@
 <template>
-	<AppHeader @open="handleOpenMenu"></AppHeader>
-	<AppMenu v-if="isOpenMenu"></AppMenu>
+	<AppHeader @open="handleMenuOpen"></AppHeader>
+	<AppMenu v-if="isOpenMenu" @close="handleMenuClose"></AppMenu>
 	<AppMain></AppMain>
 	<AppFooter></AppFooter>
 </template>
@@ -14,8 +14,12 @@ import { ref } from 'vue';
 
 const isOpenMenu = ref(false);
 
-function handleOpenMenu(isClickButton) {
-	isOpenMenu.value = isClickButton;
+function handleMenuOpen() {
+	isOpenMenu.value = true;
+}
+
+function handleMenuClose() {
+	isOpenMenu.value = false;
 }
 </script>
 
