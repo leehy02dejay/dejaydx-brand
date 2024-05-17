@@ -4066,6 +4066,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+kakao.maps.d.ts@^0.1.39:
+  version "0.1.39"
+  resolved "https://registry.yarnpkg.com/kakao.maps.d.ts/-/kakao.maps.d.ts-0.1.39.tgz#dc30726531906d9c42b8f15d7404baa169b8255e"
+  integrity sha512-KXENJ8hHYtjb5G+0vf8TXx/PwWW4j5ndDiQTSMvGtF7EFWu2P3N/+Zivcj9/UKn3j29Iz/sIUaA7WL8Ug3IDGQ==
+
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
@@ -6073,6 +6078,13 @@ vue3-carousel@^0.3.3:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/vue3-carousel/-/vue3-carousel-0.3.3.tgz#72cdddbeb5ab64dc6fc7d54ab133b644e4a72f8f"
   integrity sha512-VsuOBE4LG9lxAiYGR9U7ps4RyJ4oFQGzk79/49ybvoxzNpahPAVWIDHKK3a1lOv0CSplFq6u4FvaFLZ8x3FgWg==
+
+vue3-kakao-maps@^2.3.6:
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/vue3-kakao-maps/-/vue3-kakao-maps-2.3.6.tgz#5cf9fc0f9e51243a28ddcd6a95b3bf2511e8b6c9"
+  integrity sha512-ZwwZBG6HAA+jJap1FU76hqQ425Keje9Vm7Uk+tLZC4hdjJzgyV53F77pFV9xVczGepJJiZvE4jU0bqI6Y2u2FA==
+  dependencies:
+    kakao.maps.d.ts "^0.1.39"
 
 vue@^3.4.23:
   version "3.4.23"

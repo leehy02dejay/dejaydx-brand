@@ -21,7 +21,7 @@
 					자재 바코드 및 Lot card 조회
 				</div>
 				<div class="sub41_text05">
-					<a href="/">More view +</a>
+					<router-link to="/useCaseDetail/ems">More view +</router-link>
 				</div>
 			</div>
 		</div>

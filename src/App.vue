@@ -1,7 +1,7 @@
 <template>
 	<AppHeader @open="handleMenuOpen"></AppHeader>
 	<AppMenu v-if="isOpenMenu" @close="handleMenuClose"></AppMenu>
-	<AppMain></AppMain>
+	<AppMain> </AppMain>
 	<AppFooter></AppFooter>
 </template>
 

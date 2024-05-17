@@ -1,13 +1,13 @@
 <template>
 	<div>
 		<UseCaseList></UseCaseList>
-		<AboutMoreView></AboutMoreView>
+		<AboutMoreBanner></AboutMoreBanner>
 	</div>
 </template>
 
 <script setup>
 import UseCaseList from '@/components/menus/useCase/UseCaseList.vue';
-import AboutMoreView from '@/components/menus/about/AboutMoreView.vue';
+import AboutMoreBanner from '@/components/menus/about/AboutMoreBanner.vue';
 </script>
 
 <style lang="scss" scoped></style>
