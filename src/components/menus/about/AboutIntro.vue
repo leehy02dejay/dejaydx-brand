@@ -6,7 +6,7 @@
 		</div>
 
 		<div class="sub11-1_img">
-			<img src="/image/sub11-1.png" width="100%" />
+			<img :src="require('@/assets/image/sub11-1.png')" width="100%" />
 		</div>
 
 		<div class="sub11_text_warp">

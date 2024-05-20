@@ -6,7 +6,7 @@
 			<div class="sub42_stitle_btn">EMS</div>
 			<div class="sub42_stitle">설비 관리 시스템 구축</div>
 			<div class="sub42_img01">
-				<img src="/image/sub42-1.png" />
+				<img :src="require('@/assets/image/sub42-1.png')" />
 			</div>
 		</div>
 		<!-- 도입사례 뷰페이지 두번째 상단 영역 끝 -->
@@ -14,7 +14,8 @@
 		<!-- 도입사례 뷰페이지 세번째 상단 영역 시작 -->
 		<div class="sub42_con02">
 			<div class="sub42_con02_stitle">
-				<img src="/image/sub21_con01_stitle.png" /> 구축 정보
+				<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> 구축
+				정보
 			</div>
 			<div class="sub42_con02_list">
 				<ul>
@@ -32,14 +33,15 @@
 		<!-- 도입사례 뷰페이지 네번째 상단 영역 시작 -->
 		<div class="sub42_con02">
 			<div class="sub42_con02_stitle">
-				<img src="/image/sub21_con01_stitle.png" /> 진행 과정
+				<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> 진행
+				과정
 				<span class="sub42_text02"
 					>컨설팅 > 기획 > 디자인 > 개발 > 현지 셋업 ( 말레이시아, 천진, 서안,
 					헝가리, 울산)</span
 				>
 			</div>
 			<div class="sub42_con02_img">
-				<img src="/image/sub42-2.png" />
+				<img :src="require('@/assets/image/sub42-2.png')" />
 			</div>
 		</div>
 		<!-- 도입사례 뷰페이지 네번째 상단 영역 끝 -->
@@ -47,8 +49,8 @@
 		<!-- 도입사례 뷰페이지 다섯번째 상단 영역 시작 -->
 		<div class="sub42_con02">
 			<div class="sub42_con02_stitle">
-				<img src="/image/sub21_con01_stitle.png" /> 설비 관리 시스템 Admin WEB
-				구축 / M-EMS
+				<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> 설비
+				관리 시스템 Admin WEB 구축 / M-EMS
 			</div>
 			<div class="sub42_con02_list">
 				<ul>
@@ -75,8 +77,8 @@
 		<!-- 도입사례 뷰페이지 여섯번째 상단 영역 시작 -->
 		<div class="sub42_con02">
 			<div class="sub42_con02_stitle">
-				<img src="/image/sub21_con01_stitle.png" /> 설비 관리 시스템 APP 구축 /
-				M-EMS
+				<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> 설비
+				관리 시스템 APP 구축 / M-EMS
 			</div>
 			<div class="sub42_con02_list">
 				<ul>

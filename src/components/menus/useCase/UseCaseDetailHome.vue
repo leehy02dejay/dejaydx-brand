@@ -14,7 +14,7 @@
 				>
 			</div>
 			<div class="sub42_btn">
-				<a href="/contact">문의하기</a>
+				<RouterLink to="/contact">문의하기</RouterLink>
 			</div>
 		</div>
 		<AboutMoreBanner></AboutMoreBanner>

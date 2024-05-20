@@ -10,28 +10,28 @@
 		</div>
 		<div class="main_con04">
 			<ul class="main_con04_logos">
-				<li><img src="/image/main_con04-1.png" /></li>
-				<li><img src="/image/main_con04-2.png" /></li>
-				<li><img src="/image/main_con04-3.png" /></li>
-				<li><img src="/image/main_con04-4.png" /></li>
-				<li><img src="/image/main_con04-5.png" /></li>
-				<li><img src="/image/main_con04-6.png" /></li>
-				<li><img src="/image/main_con04-7.png" /></li>
-				<li><img src="/image/main_con04-8.png" /></li>
-				<li><img src="/image/main_con04-9.png" /></li>
-				<li><img src="/image/main_con04-10.png" /></li>
-				<li><img src="/image/main_con04-11.png" /></li>
-				<li><img src="/image/main_con04-12.png" /></li>
-				<li><img src="/image/main_con04-13.png" /></li>
-				<li><img src="/image/main_con04-14.png" /></li>
-				<li><img src="/image/main_con04-15.png" /></li>
+				<li><img :src="require('@/assets/image/main_con04-1.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-2.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-3.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-4.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-5.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-6.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-7.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-8.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-9.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-10.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-11.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-12.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-13.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-14.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04-15.png')" /></li>
 			</ul>
 		</div>
 		<div class="main_con04_dot">
 			<ul>
-				<li><img src="/image/main_con04_slide.png" /></li>
-				<li><img src="/image/main_con04_slide2.png" /></li>
-				<li><img src="/image/main_con04_slide2.png" /></li>
+				<li><img :src="require('@/assets/image/main_con04_slide.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04_slide2.png')" /></li>
+				<li><img :src="require('@/assets/image/main_con04_slide2.png')" /></li>
 			</ul>
 		</div>
 	</div>

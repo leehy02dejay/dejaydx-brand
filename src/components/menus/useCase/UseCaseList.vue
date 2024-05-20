@@ -6,7 +6,7 @@
 
 		<div class="sub41_con01">
 			<div class="sub41_con01_left">
-				<img src="/image/sub41-1.png" />
+				<img :src="require('@/assets/image/sub41-1.png')" />
 			</div>
 			<div class="sub41_con01_right">
 				<div>
@@ -30,7 +30,7 @@
 
 		<div class="sub41_con02">
 			<div class="sub41_con02_left">
-				<img src="/image/sub41-2.png" />
+				<img :src="require('@/assets/image/sub41-2.png')" />
 			</div>
 			<div class="sub41_con02_right">
 				<div>
@@ -45,7 +45,7 @@
 					자재 바코드 및 Lot card 조회
 				</div>
 				<div class="sub41_text09">
-					<a href="/">More view +</a>
+					<RouterLink to="/">More view +</RouterLink>
 				</div>
 			</div>
 		</div>
@@ -54,7 +54,7 @@
 
 		<div class="sub41_con02">
 			<div class="sub41_con02_left">
-				<img src="/image/sub41-3.png" />
+				<img :src="require('@/assets/image/sub41-3.png')" />
 			</div>
 			<div class="sub41_con02_right">
 				<div>
@@ -69,7 +69,7 @@
 					자재 바코드 및 Lot card 조회
 				</div>
 				<div class="sub41_text09">
-					<a href="/">More view +</a>
+					<RouterLink to="/">More view +</RouterLink>
 				</div>
 			</div>
 		</div>
@@ -78,7 +78,7 @@
 
 		<div class="sub41_con02">
 			<div class="sub41_con02_left">
-				<img src="/image/sub41-4.png" />
+				<img :src="require('@/assets/image/sub41-4.png')" />
 			</div>
 			<div class="sub41_con02_right">
 				<div>
@@ -93,14 +93,14 @@
 					자재 바코드 및 Lot card 조회
 				</div>
 				<div class="sub41_text09">
-					<a href="/">More view +</a>
+					<RouterLink to="/">More view +</RouterLink>
 				</div>
 			</div>
 		</div>
 		<div style="clear: both"></div>
 		<div class="sub41_con02">
 			<div class="sub41_con02_left">
-				<img src="/image/sub41-5.png" />
+				<img :src="require('@/assets/image/sub41-5.png')" />
 			</div>
 			<div class="sub41_con02_right">
 				<div>
@@ -115,7 +115,7 @@
 					자재 바코드 및 Lot card 조회
 				</div>
 				<div class="sub41_text09">
-					<a href="/">More view +</a>
+					<RouterLink to="/">More view +</RouterLink>
 				</div>
 			</div>
 		</div>

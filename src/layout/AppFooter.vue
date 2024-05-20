@@ -8,12 +8,16 @@
 				<p class="fot_text02">최적의 스마트팩토리를 구현해드립니다.</p>
 			</div>
 			<div class="fot_btn">
-				<a href="/"><img src="/image/fot_btn.png" /></a>
+				<RouterLink to="/"
+					><img :src="require('@/assets/image/fot_btn.png')"
+				/></RouterLink>
 			</div>
 		</div>
 		<div class="fot">
 			<div class="fot_logo">
-				<a href="/"><img src="/image/logo.png" /></a>
+				<RouterLink to="/"
+					><img :src="require('@/assets/image/logo.png')"
+				/></RouterLink>
 			</div>
 			<div class="fot_text03">
 				회사명 : 드제이디엑스 ｜ 대표명 : 안희찬 <br />
@@ -25,7 +29,9 @@
 			</div>
 		</div>
 		<div class="fot_top_btn">
-			<a href="/"><img src="/image/fot_top_btn.png" /></a>
+			<RouterLink to="/"
+				><img :src="require('@/assets/image/fot_top_btn.png')"
+			/></RouterLink>
 		</div>
 	</div>
 </template>

@@ -14,7 +14,7 @@
 				</p>
 			</div>
 			<div class="sub11_con02_right">
-				<img src="/image/sub11-2.png" width="100%" />
+				<img :src="require('@/assets/image/sub11-2.png')" width="100%" />
 			</div>
 		</div>
 	</div>

@@ -1,26 +1,28 @@
 <template>
 	<div class="header_m">
 		<div class="menu_logo">
-			<a href="/"><img src="/image/m_logo.png" /></a>
+			<RouterLink to="/"
+				><img :src="require('@/assets/image/m_logo.png')"
+			/></RouterLink>
 		</div>
 		<div class="menu_btn">
-			<a href="/">
-				<img src="/image/m_menu.png" />
-			</a>
+			<RouterLink to="/">
+				<img :src="require('@/assets/image/m_menu.png')" />
+			</RouterLink>
 		</div>
 	</div>
 	<div class="menu_bg"></div>
 	<div class="sidebar_menu">
 		<div class="close_btn">
-			<a href="#">
-				<img src="/image/m_close.png" />
-			</a>
+			<RouterLink to="#">
+				<img :src="require('@/assets/image/m_close.png')" />
+			</RouterLink>
 		</div>
 		<ul class="menu_wrap">
-			<li><a href="/">ABOUT US</a></li>
-			<li><a href="/">SMART FACTORY</a></li>
-			<li><a href="/">USE CASE</a></li>
-			<li><a href="/">CONTACT</a></li>
+			<li><RouterLink to="/">ABOUT US</RouterLink></li>
+			<li><RouterLink to="/">SMART FACTORY</RouterLink></li>
+			<li><RouterLink to="/">USE CASE</RouterLink></li>
+			<li><RouterLink to="/">CONTACT</RouterLink></li>
 		</ul>
 	</div>
 </template>

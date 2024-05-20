@@ -3,18 +3,23 @@
 		<div class="all_menu">
 			<div class="all_menu_top">
 				<div class="all_menu_logo">
-					<a href="/"><img src="/image/logo.png" /></a>
+					<RouterLink to="/"
+						><img :src="require('@/assets/image/logo.png')"
+					/></RouterLink>
 				</div>
 				<div class="all_menu_close">
-					<img src="/image/all_menu_close.png" @click="clickedCloseMenu" />
+					<img
+						:src="require('@/assets/image/all_menu_close.png')"
+						@click="clickedCloseMenu"
+					/>
 				</div>
 			</div>
 			<div class="all_menu_bottom">
 				<div class="all_menu_data">
 					<div class="all_menu_text01">
-						회사소개서 &nbsp;<a href="/"
-							><img src="/image/all_menu_download.png"
-						/></a>
+						회사소개서 &nbsp;<RouterLink to="/"
+							><img :src="require('@/assets/image/all_menu_download.png')"
+						/></RouterLink>
 					</div>
 
 					<div class="all_menu_data01">
@@ -32,10 +37,10 @@
 				</div>
 				<div class="all_menu_list">
 					<ul>
-						<li><a href="/aboutUs">ABOUT US</a></li>
-						<li><a href="/smartFactory">SMART FACTORY</a></li>
-						<li><a href="/useCase">USE CASE</a></li>
-						<li><a href="/contact">CONTACT</a></li>
+						<li><RouterLink to="/aboutUs">ABOUT US</RouterLink></li>
+						<li><RouterLink to="/smartFactory">SMART FACTORY</RouterLink></li>
+						<li><RouterLink to="/useCase">USE CASE</RouterLink></li>
+						<li><RouterLink to="/contact">CONTACT</RouterLink></li>
 					</ul>
 				</div>
 			</div>

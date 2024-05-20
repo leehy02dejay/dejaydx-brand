@@ -11,7 +11,7 @@
 		<div class="main_con02">
 			<ul id="main_con02_list">
 				<li>
-					<img src="/image/main_con02-1.png" />
+					<img :src="require('@/assets/image/main_con02-1.png')" />
 					<p class="main_con02_text01">생산성 향상</p>
 					<div class="main_con02_data">
 						<span class="main_con02_text02">30</span>
@@ -19,7 +19,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="/image/main_con02-2.png" />
+					<img :src="require('@/assets/image/main_con02-2.png')" />
 					<p class="main_con02_text01">품질 향상</p>
 					<div class="main_con02_data">
 						<span class="main_con02_text02">43.5</span>
@@ -27,7 +27,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="/image/main_con02-3.png" />
+					<img :src="require('@/assets/image/main_con02-3.png')" />
 					<p class="main_con02_text01">매출액 증가</p>
 					<div class="main_con02_data">
 						<span class="main_con02_text02">7.7</span>
@@ -35,7 +35,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="/image/main_con02-4.png" />
+					<img :src="require('@/assets/image/main_con02-4.png')" />
 					<p class="main_con02_text01">원가 감소</p>
 					<div class="main_con02_data">
 						<span class="main_con02_text02">-15.9</span>
@@ -43,7 +43,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="/image/main_con02-5.png" />
+					<img :src="require('@/assets/image/main_con02-5.png')" />
 					<p class="main_con02_text01">납기 준수율</p>
 					<div class="main_con02_data">
 						<span class="main_con02_text02">15.5</span>
@@ -51,7 +51,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="/image/main_con02-6.png" />
+					<img :src="require('@/assets/image/main_con02-6.png')" />
 					<p class="main_con02_text01">산업재해감소</p>
 					<div class="main_con02_data">
 						<span class="main_con02_text02">-18.3</span>

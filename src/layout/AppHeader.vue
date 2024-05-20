@@ -5,18 +5,28 @@
 		<div class="header" :class="{ roll: isScrolled }">
 			<div class="main_top">
 				<div class="logo">
-					<a href="/"><img src="/image/logo.png" /></a>
+					<RouterLink to="/"
+						><img :src="require('@/assets/image/logo.png')"
+					/></RouterLink>
 				</div>
 				<div class="menu">
 					<ul>
-						<li><a href="/aboutUs">ABOUT US</a></li>
-						<li><a href="/smartFactory">SMART FACTORY</a></li>
-						<li><a href="/useCase">USE CASE</a></li>
-						<li><a href="/contact">CONTACT</a></li>
+						<li>
+							<RouterLink to="/aboutUs">ABOUT US</RouterLink>
+						</li>
+						<li>
+							<RouterLink to="/smartFactory"> FACTORY</RouterLink>
+						</li>
+						<li>
+							<RouterLink to="/useCase">USE CASE</RouterLink>
+						</li>
+						<li>
+							<RouterLink to="/contact">CONTACT</RouterLink>
+						</li>
 					</ul>
 				</div>
 				<div class="allmenu_btn" @click="handleOpenMenu">
-					<img src="/image/menu_btn.png" />
+					<img :src="require('@/assets/image/menu_btn.png')" />
 				</div>
 			</div>
 		</div>

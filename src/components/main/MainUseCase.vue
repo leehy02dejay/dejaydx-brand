@@ -7,7 +7,7 @@
 			</p>
 		</div>
 		<div class="main_con03_text">
-			<img src="/image/main_con03_text.png" />
+			<img :src="require('@/assets/image/main_con03_text.png')" />
 		</div>
 		<Carousel ref="carousel" :wrap-around="true" :breakpoints="breakpoints">
 			<Slide
@@ -16,21 +16,23 @@
 				:key="item.enTItle"
 			>
 				<div class="main_con03_left">
-					<img :src="'/image/' + item.image" />
+					<img :src="require('@/assets/image/' + item.image)" />
 				</div>
 				<div class="main_con03_right">
 					<p class="main_con03_text03">{{ item.krTitle }}</p>
 					<p class="main_con03_text04">{{ item.enTitle }}</p>
 					<p v-html="item.contents" class="main_con03_text05"></p>
 					<p class="main_con03_text06">
-						More view &nbsp;&nbsp;<img src="/image/main_con03_btn.png" />
+						More view &nbsp;&nbsp;<img
+							:src="require('@/assets/image/main_con03_btn.png')"
+						/>
 					</p>
 				</div>
 				<div class="main_con03_arrow_left" @click="prevSlideChange">
-					<img src="/image/main_con03_arrow_left.png" />
+					<img :src="require('@/assets/image/main_con03_arrow_left.png')" />
 				</div>
 				<div class="main_con03_arrow_right" @click="nextSlideChange">
-					<img src="/image/main_con03_arrow_right.png" />
+					<img :src="require('@/assets/image/main_con03_arrow_right.png')" />
 				</div>
 			</Slide>
 		</Carousel>

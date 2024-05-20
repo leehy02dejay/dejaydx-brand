@@ -11,15 +11,15 @@
 		</div>
 
 		<div class="sub12_con02_stitle">
-			<img src="/image/sub21_con01_stitle.png" /> MES 특장점
+			<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> MES 특장점
 		</div>
 
 		<div class="sub12_con02">
 			<ul>
-				<li><img src="/image/sub21_con02-1.png" /></li>
-				<li><img src="/image/sub21_con02-2.png" /></li>
-				<li><img src="/image/sub21_con02-3.png" /></li>
-				<li><img src="/image/sub21_con02-4.png" /></li>
+				<li><img :src="require('@/assets/image/sub21_con02-1.png')" /></li>
+				<li><img :src="require('@/assets/image/sub21_con02-2.png')" /></li>
+				<li><img :src="require('@/assets/image/sub21_con02-3.png')" /></li>
+				<li><img :src="require('@/assets/image/sub21_con02-4.png')" /></li>
 			</ul>
 		</div>
 
@@ -36,14 +36,15 @@
 				</p>
 			</div>
 			<div class="sub12_con02_stitle">
-				<img src="/image/sub21_con01_stitle.png" /> EMS 특장점
+				<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> EMS
+				특장점
 			</div>
 			<div class="sub12_con02">
 				<ul>
-					<li><img src="/image/sub21_con03-1.png" /></li>
-					<li><img src="/image/sub21_con03-2.png" /></li>
-					<li><img src="/image/sub21_con03-3.png" /></li>
-					<li><img src="/image/sub21_con03-4.png" /></li>
+					<li><img :src="require('@/assets/image/sub21_con03-1.png')" /></li>
+					<li><img :src="require('@/assets/image/sub21_con03-2.png')" /></li>
+					<li><img :src="require('@/assets/image/sub21_con03-3.png')" /></li>
+					<li><img :src="require('@/assets/image/sub21_con03-4.png')" /></li>
 				</ul>
 			</div>
 		</div>
@@ -59,7 +60,7 @@
 				</p>
 			</div>
 			<div class="sub21_con04">
-				<img src="/image/sub21_con04-1.png" />
+				<img :src="require('@/assets/image/sub21_con04-1.png')" />
 				<ul>
 					<li>
 						<div class="sub21_con04_left">01</div>

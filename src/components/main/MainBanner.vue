@@ -32,10 +32,10 @@
 		</div>
 		<ScrollTwinkle></ScrollTwinkle>
 		<div class="arrow_left" @click="prevSlideChange">
-			<img src="/image/arrow_left.png" />
+			<img :src="require('@/assets/image/arrow_left.png')" />
 		</div>
 		<div class="arrow_right" @click="nextSlideChange">
-			<img src="/image/arrow_right.png" />
+			<img :src="require('@/assets/image/arrow_right.png')" />
 		</div>
 	</div>
 </template>
@@ -50,15 +50,15 @@ const carousel = ref(null);
 const slides = [
 	{
 		title: 'BannerImage1',
-		image: '/image/main_visual01.jpg',
+		image: require('@/assets/image/main_visual01.jpg'),
 	},
 	{
 		title: 'BannerImage2',
-		image: '/image/main_visual02.jpg',
+		image: require('@/assets/image/main_visual02.jpg'),
 	},
 	{
 		title: 'BannerImage3',
-		image: '/image/main_visual03.jpg',
+		image: require('@/assets/image/main_visual03.jpg'),
 	},
 ];
 

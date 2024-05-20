@@ -13,7 +13,7 @@
 			</p>
 		</div>
 		<div class="main_con01">
-			<img src="/image/main_con01-1.png" />
+			<img :src="require('@/assets/image/main_con01-1.png')" />
 		</div>
 		<div class="background-circle" data-aos="zoom-in"></div>
 	</div>

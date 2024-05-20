@@ -2,10 +2,14 @@
 	<div>
 		<div class="fot_ban_warp">
 			<div class="fot_ban01">
-				<a href="/useCase"><img src="/image/fot_ban03.png" /></a>
+				<RouterLink to="/useCase"
+					><img :src="require('@/assets/image/fot_ban03.png')"
+				/></RouterLink>
 			</div>
 			<div class="fot_ban02">
-				<a href="/contact"><img src="/image/fot_ban02.png" /></a>
+				<RouterLink to="/contact"
+					><img :src="require('@/assets/image/fot_ban02.png')"
+				/></RouterLink>
 			</div>
 		</div>
 	</div>

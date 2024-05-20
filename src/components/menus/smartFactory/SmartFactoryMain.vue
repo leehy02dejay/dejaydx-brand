@@ -12,7 +12,7 @@
 	<div id="sub21_con01_warp">
 		<div class="sub21_con01">
 			<div class="sub21_con01_left">
-				<img src="/image/sub21-1.png" />
+				<img :src="require('@/assets/image/sub21-1.png')" />
 			</div>
 			<div class="sub21_con01_right">
 				<div class="sub21_con01_right01">
@@ -29,7 +29,9 @@
 					<p class="sub21_text04">
 						최적의 스마트팩토리 구현에 모든 진행 과정을 함께 하고 있습니다.
 					</p>
-					<p class="sub21_text05"><img src="/image/sub21-2.png" /></p>
+					<p class="sub21_text05">
+						<img :src="require('@/assets/image/sub21-2.png')" />
+					</p>
 				</div>
 			</div>
 		</div>

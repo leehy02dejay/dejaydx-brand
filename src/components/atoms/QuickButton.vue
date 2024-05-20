@@ -1,6 +1,8 @@
 <template>
 	<div class="quick_btn">
-		<a href="/"><img src="/image/quick_btn.png" /></a>
+		<RouterLink to="/contact"
+			><img :src="require('@/assets/image/quick_btn.png')"
+		/></RouterLink>
 	</div>
 </template>
 
