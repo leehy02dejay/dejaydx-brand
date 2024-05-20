@@ -30,11 +30,13 @@ function handleScroll() {
 		scrollTop.value = document.documentElement.scrollTop;
 		if (!hasScrolled.value) {
 			const main_con01 = document.querySelector('.background-circle');
-			hasScrolled.value = true;
-			window.scrollTo({
-				top: window.innerHeight,
-				behavior: 'smooth',
-			});
+			if (main_con01) {
+				hasScrolled.value = true;
+				window.scrollTo({
+					top: window.innerHeight,
+					behavior: 'smooth',
+				});
+			}
 
 			setTimeout(() => {
 				main_con01.classList.add('active');

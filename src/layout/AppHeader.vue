@@ -36,14 +36,18 @@
 <script setup>
 import QuickButton from '@/components/atoms/QuickButton.vue';
 import AppMobileHeader from './AppMobileHeader.vue';
-import { ref, onMounted, onUnmounted, defineEmits } from 'vue';
+import { ref, onMounted, onUnmounted, defineEmits, watch } from 'vue';
+import { useRoute } from 'vue-router';
 
 const emit = defineEmits(['open']);
 
 const isScrolled = ref(false);
+const route = useRoute();
 
 onMounted(() => {
-	window.addEventListener('scroll', handleScroll);
+	if (route.path === '/') {
+		window.addEventListener('scroll', handleScroll);
+	}
 });
 
 onUnmounted(() => {
@@ -54,6 +58,19 @@ function handleScroll() {
 	const scrollY = window.scrollY;
 	isScrolled.value = scrollY > 0;
 }
+
+watch(
+	() => route.path,
+	newPath => {
+		if (newPath === '/') {
+			window.addEventListener('scroll', handleScroll);
+			handleScroll(); // 초기화 시 스크롤 위치에 따른 isScrolled 상태 업데이트
+		} else {
+			window.removeEventListener('scroll', handleScroll);
+			isScrolled.value = true; // 기본값 true로 설정
+		}
+	},
+);
 
 function handleOpenMenu() {
 	emit('open');
