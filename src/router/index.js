@@ -5,8 +5,12 @@ import NotFound from '@/layout/NotFound.vue';
 import UseCaseView from '@/views/UseCaseView.vue';
 import SmartFactoryView from '@/views/SmartFactoryView.vue';
 import UseCaseEMSDetail from '@/components/menus/useCase/UseCaseEMSDetail.vue';
+import UseCaseNextMESDetail from '@/components/menus/useCase/UseCaseNextMESDetail.vue';
+import UseCaseMESDetail from '@/components/menus/useCase/UseCaseMESDetail.vue';
+import UseCaseMMESDetail from '@/components/menus/useCase/UseCaseM-MESDetail.vue';
 import UseCaseDetailHome from '@/components/menus/useCase/UseCaseDetailHome.vue';
 import ContactView from '@/views/ContactView.vue';
+import UseCaseMCADetail from '@/components/menus/useCase/UseCaseMCADetail.vue';
 
 const routes = [
 	{
@@ -35,6 +39,28 @@ const routes = [
 				name: 'UseCaseEMSDetail',
 				component: UseCaseEMSDetail,
 			},
+			{
+				path: 'nextmes',
+				name: 'UseCaseNextMESDetail',
+				component: UseCaseNextMESDetail,
+			},
+			{
+				path: 'mes',
+				name: 'UseCaseMESDetail',
+				component: UseCaseMESDetail,
+			},
+
+			{
+				path: 'mmes',
+				name: 'UseCaseM-MESDetail',
+				component: UseCaseMMESDetail,
+			},
+
+			{
+				path: 'mca',
+				name: 'UseCaseMCADetail',
+				component: UseCaseMCADetail,
+			},
 		],
 	},
 	{
@@ -51,6 +77,9 @@ const routes = [
 const router = createRouter({
 	history: createWebHashHistory(process.env.BASE_URL),
 	routes,
+	scrollBehavior() {
+		return { top: 0 };
+	},
 });
 
 export default router;

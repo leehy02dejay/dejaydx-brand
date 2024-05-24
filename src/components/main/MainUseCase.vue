@@ -1,13 +1,28 @@
 <template>
 	<div id="main_con03_warp">
-		<div class="main_con03_title">
-			<p class="main_con03_text01">도입사례</p>
-			<p class="main_con03_text02">
-				드제이DX의 스마트팩토리 도입사례를 확인해보세요.
-			</p>
-		</div>
-		<div class="main_con03_text">
-			<img :src="require('@/assets/image/main_con03_text.png')" />
+		<div class="main_con03_title_wrap">
+			<div class="main_con03_title">
+				<p
+					data-aos="fade-up"
+					v-if="isViewTitle"
+					data-aos-duration="1000"
+					class="main_con03_text01"
+				>
+					도입사례
+				</p>
+				<p
+					data-aos="fade-up"
+					v-if="isViewTitle"
+					data-aos-duration="950"
+					class="main_con03_text02"
+					data-aos-delay="50"
+				>
+					드제이DX의 스마트팩토리 도입사례를 확인해보세요.
+				</p>
+			</div>
+			<div class="main_con03_text">
+				<img :src="require('@/assets/image/main_con03_text.png')" />
+			</div>
 		</div>
 		<Carousel ref="carousel" :wrap-around="true" :breakpoints="breakpoints">
 			<Slide
@@ -22,11 +37,12 @@
 					<p class="main_con03_text03">{{ item.krTitle }}</p>
 					<p class="main_con03_text04">{{ item.enTitle }}</p>
 					<p v-html="item.contents" class="main_con03_text05"></p>
-					<p class="main_con03_text06">
-						More view &nbsp;&nbsp;<img
-							:src="require('@/assets/image/main_con03_btn.png')"
-						/>
-					</p>
+					<RouterLink :to="item.path">
+						<p class="main_con03_text06">
+							More view &nbsp;&nbsp;<img
+								:src="require('@/assets/image/main_con03_btn.png')"
+							/></p
+					></RouterLink>
 				</div>
 				<div class="main_con03_arrow_left" @click="prevSlideChange">
 					<img :src="require('@/assets/image/main_con03_arrow_left.png')" />
@@ -40,10 +56,11 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { Carousel, Slide } from 'vue3-carousel';
 
 const carousel = ref(null);
+const isViewTitle = ref(false);
 
 const prevSlideChange = () => {
 	carousel.value.prev();
@@ -63,6 +80,7 @@ const useCaseContents = [
 				- 팔레트 및 박스 관리 및 Tracking<br>
 				- 자재 바코드 및 Lot card 조회`,
 		image: 'main_con03-1.png',
+		path: '/useCaseDetail/nextmes',
 	},
 	{
 		krTitle: '설비 관리시스템',
@@ -73,6 +91,7 @@ const useCaseContents = [
 				- 실시간 작업현황 및 사용자 작업상태 관리<br>
 				- W/O 생성 및 설비 점검내용 EMS 공유`,
 		image: 'main_con03-2.png',
+		path: '/useCaseDetail/ems',
 	},
 	{
 		krTitle: '생산 관리시스템',
@@ -83,8 +102,27 @@ const useCaseContents = [
 				- BATCH HISTORY 관리<br>
 				- 사전 비가동 예약기능`,
 		image: 'main_con03-3.png',
+		path: '/useCaseDetail/mes',
 	},
 ];
+
+onMounted(() => {
+	const observer = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					isViewTitle.value = true;
+				} else {
+					isViewTitle.value = false;
+				}
+			});
+		},
+		{ threshold: 0.1 },
+	);
+
+	const ele = document.querySelector('.main_con03_text');
+	observer.observe(ele);
+});
 </script>
 
 <style>
@@ -103,7 +141,7 @@ const useCaseContents = [
 #main_con03_warp {
 	position: relative;
 	width: 100%;
-	min-height: 950px;
+	min-height: 1200px;
 	background: url('/public/image/main_con03_bg.png') center top;
 	background-size: cover;
 	overflow: hidden;
@@ -115,7 +153,7 @@ const useCaseContents = [
 	text-align: center;
 	left: 0%;
 	z-index: 99;
-	top: 100px;
+	top: 180px;
 }
 
 .main_con03 {
@@ -123,7 +161,7 @@ const useCaseContents = [
 	clear: both;
 	width: 100%;
 	margin: 0 auto;
-	padding-top: 330px;
+	padding-top: 450px;
 	overflow: hidden;
 }
 
@@ -147,13 +185,13 @@ const useCaseContents = [
 	z-index: 99999;
 	left: 50%;
 	margin-left: 240px;
-	top: 386px;
+	top: 500px;
 }
 
 .main_con03_text {
 	position: absolute;
 	width: 900px;
-	top: 40px;
+	top: 150px;
 	z-index: 1;
 	left: 50%;
 	margin-left: -480px;
@@ -163,7 +201,7 @@ const useCaseContents = [
 	font-size: 50px;
 	font-weight: bold;
 	line-height: 62px;
-	padding-top: 30px;
+	padding-top: 50px;
 }
 
 .main_con03_text02 {
@@ -198,14 +236,14 @@ const useCaseContents = [
 .main_con03_arrow_left {
 	position: absolute;
 	left: 1%;
-	top: 530px;
+	top: 700px;
 	z-index: 99999;
 }
 
 .main_con03_arrow_right {
 	position: absolute;
 	right: 1%;
-	top: 530px;
+	top: 700px;
 	z-index: 99999;
 }
 

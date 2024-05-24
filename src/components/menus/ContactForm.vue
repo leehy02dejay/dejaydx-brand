@@ -31,93 +31,125 @@
 					</div>
 					<div class="sub51_data02"><KakaoMap></KakaoMap></div>
 				</div>
-				<div class="sub51_con01_right">
-					<div class="sub51_con01_right01">
-						<div class="sub51_con01_right01_left">
-							<div class="sub51_text05">이름</div>
-							<div class="sub51_text06">
-								<input class="sub51_input01" name="name" />
+				<form @submit.prevent="sendEmail">
+					<div class="sub51_con01_right">
+						<div class="sub51_con01_right01">
+							<div class="sub51_con01_right01_left">
+								<div class="sub51_text05">이름</div>
+								<div class="sub51_text06">
+									<input class="sub51_input01" v-model="form.name" required />
+								</div>
+							</div>
+							<div class="sub51_con01_right01_right">
+								<div class="sub51_text05">소속</div>
+								<div class="sub51_text06">
+									<input
+										class="sub51_input01"
+										v-model="form.organization"
+										required
+									/>
+								</div>
 							</div>
 						</div>
-						<div class="sub51_con01_right01_right">
-							<div class="sub51_text05">소속</div>
-							<div class="sub51_text06">
-								<input class="sub51_input01" name="name" />
+						<div class="sub51_con01_right01-2">
+							<div class="sub51_con01_right01_left">
+								<div class="sub51_text05">연락처</div>
+								<div class="sub51_text06">
+									<input class="sub51_input01" v-model="form.tel" required />
+								</div>
+							</div>
+							<div class="sub51_con01_right01_right">
+								<div class="sub51_text05">이메일</div>
+								<div class="sub51_text06">
+									<input
+										type="email"
+										class="sub51_input01"
+										v-model="form.email"
+										required
+									/>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="sub51_con01_right01-2">
-						<div class="sub51_con01_right01_left">
-							<div class="sub51_text05">연락처</div>
-							<div class="sub51_text06">
-								<input class="sub51_input01" name="name" />
+						<div class="sub51_con01_right02">
+							<div class="sub51_con01_right02_left">문의분야</div>
+							<div class="sub51_con01_right02_right">
+								<ul>
+									<li>
+										<input
+											type="radio"
+											value="homepage"
+											v-model="form.inquiryType"
+											required
+										/>
+										<label for="homepage">홈페이지</label>
+									</li>
+									<li>
+										<input
+											type="radio"
+											value="application"
+											v-model="form.inquiryType"
+										/>
+										<label for="application">어플리케이션</label>
+									</li>
+									<li>
+										<input
+											type="radio"
+											value="maintenance"
+											v-model="form.inquiryType"
+										/>
+										<label for="maintenance">유지보수</label>
+									</li>
+									<li>
+										<input
+											type="radio"
+											value="etc"
+											v-model="form.inquiryType"
+										/>
+										<label for="etc">기타</label>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<div class="sub51_con01_right01_right">
-							<div class="sub51_text05">이메일</div>
-							<div class="sub51_text06">
-								<input class="sub51_input01" name="name" />
-							</div>
-						</div>
-					</div>
-					<div class="sub51_con01_right02">
-						<div class="sub51_con01_right02_left">문의분야</div>
-						<div class="sub51_con01_right02_right">
-							<ul>
-								<li>
-									<input type="radio" id="dewey" name="drone" value="dewey" />
-									<label for="dewey">홈페이지</label>
-								</li>
-								<li>
-									<input type="radio" id="dewey" name="drone" value="dewey" />
-									<label for="dewey">어플리케이션</label>
-								</li>
-								<li>
-									<input type="radio" id="dewey" name="drone" value="dewey" />
-									<label for="dewey">유지보수</label>
-								</li>
-								<li>
-									<input type="radio" id="dewey" name="drone" value="dewey" />
-									<label for="dewey">기타</label>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="sub51_con01_right03">
-						<div class="sub51_con01_right03_left">문의사항</div>
-						<div class="sub51_con01_right03_right">
-							<textarea id="custom_textarea"></textarea>
+						<div class="sub51_con01_right03">
+							<div class="sub51_con01_right03_left">문의사항</div>
+							<div class="sub51_con01_right03_right">
+								<textarea
+									id="custom_textarea"
+									v-model="form.message"
+									required
+								></textarea>
 
-							<div class="scr">
-								<span
-									style="
-										font-size: 1.2em;
-										letter-spacing: -1px;
-										line-height: 1.4em;
-									"
-								>
-									○ 개인정보 수집/이용 목적 : 홈페이지 상담에 대한 다양한 정보
-									제공<br />
-									○ 수집하는 개인정보의 항목 : 성명, 연락처<br /><br />
+								<div class="scr">
+									<span
+										style="
+											font-size: 1.2em;
+											letter-spacing: -1px;
+											line-height: 1.4em;
+										"
+									>
+										○ 개인정보 수집/이용 목적 : 홈페이지 상담에 대한 다양한 정보
+										제공<br />
+										○ 수집하는 개인정보의 항목 : 성명, 연락처<br /><br />
 
-									※상담예약서비스 이용과정에서 아래와 같은 정보들이 생성되어
-									수집될 수 있습니다. <br />
-									&nbsp;&nbsp;&nbsp;&nbsp;- 서비스이용기록, 접속로그, 쿠키,
-									접속IP정보<br /><br />
+										※상담예약서비스 이용과정에서 아래와 같은 정보들이 생성되어
+										수집될 수 있습니다. <br />
+										&nbsp;&nbsp;&nbsp;&nbsp;- 서비스이용기록, 접속로그, 쿠키,
+										접속IP정보<br /><br />
 
-									○ 개인정보의 보유 및 이용기간<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;-보존기간은 1년이며, 정보 제공자가
-									삭제를 요청할 경우 즉시 파기합니다.<br />
-									&nbsp;&nbsp;&nbsp;&nbsp;-고객님의 정보는 개인정보 보호법에
-									따라 보호되며 위의 이용목적 외에 별도로 사용하지 않을 것을
-									약속드립니다.
-								</span>
-								<br /><br />
+										○ 개인정보의 보유 및 이용기간<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;-보존기간은 1년이며, 정보 제공자가
+										삭제를 요청할 경우 즉시 파기합니다.<br />
+										&nbsp;&nbsp;&nbsp;&nbsp;-고객님의 정보는 개인정보 보호법에
+										따라 보호되며 위의 이용목적 외에 별도로 사용하지 않을 것을
+										약속드립니다.
+									</span>
+									<br /><br />
+								</div>
 							</div>
 						</div>
+						<button type="submit" class="send">문의하기</button>
 					</div>
-					<div class="send">문의하기</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -125,6 +157,35 @@
 
 <script setup>
 import KakaoMap from '@/components/atoms/KakaoMap.vue';
+import emailjs from 'emailjs-com';
+import { ref } from 'vue';
+
+const form = ref({
+	name: '',
+	organization: '',
+	tel: '',
+	email: '',
+	inquiryType: '',
+	message: '',
+});
+
+const sendEmail = () => {
+	emailjs
+		.send(
+			'service_2i7b16r', // EmailJS에서 제공한 서비스 ID
+			'template_1y90plk', // EmailJS에서 제공한 템플릿 ID
+			form.value,
+			'qUViHq8YVCfY_Ze39', // EmailJS에서 제공한 사용자 ID
+		)
+		.then(response => {
+			alert('문의가 정상적으로 등록되었습니다.');
+			console.log(response);
+		})
+		.catch(error => {
+			alert('전송에러');
+			console.log(error);
+		});
+};
 // import { onMounted, ref } from 'vue';
 // const mapContainer = ref(null);
 // const mapHeight = window.matchMedia('screen and (min-width: 1024px)').matches
@@ -348,6 +409,6 @@ import KakaoMap from '@/components/atoms/KakaoMap.vue';
 	text-align: center;
 	padding-top: 8px;
 	margin-left: 320px;
-	margin-top: 500px;
+	margin-top: 50px;
 }
 </style>

@@ -27,7 +27,9 @@
 				스마트팩토리 도입은 올바른 프로세스<span class="br_mobile"></span>
 				분석 설계가 가장 중요합니다.
 			</div>
-			<div class="main_text_btn">CONTACT US</div>
+
+			<RouterLink to="/contact"
+				><div class="main_text_btn">CONTACT US</div></RouterLink
 			>
 		</div>
 		<ScrollTwinkle></ScrollTwinkle>
@@ -80,7 +82,7 @@ const nextSlideChange = () => {
 #main_text_warp {
 	position: absolute;
 	top: 20px;
-	left: 10rem;
+	left: 16rem;
 	max-width: 70%;
 }
 

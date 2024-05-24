@@ -37,10 +37,26 @@
 				</div>
 				<div class="all_menu_list">
 					<ul>
-						<li><RouterLink to="/aboutUs">ABOUT US</RouterLink></li>
-						<li><RouterLink to="/smartFactory">SMART FACTORY</RouterLink></li>
-						<li><RouterLink to="/useCase">USE CASE</RouterLink></li>
-						<li><RouterLink to="/contact">CONTACT</RouterLink></li>
+						<li>
+							<RouterLink to="/aboutUs" @click="clickedCloseMenu"
+								>ABOUT US</RouterLink
+							>
+						</li>
+						<li>
+							<RouterLink to="/smartFactory" @click="clickedCloseMenu"
+								>SMART FACTORY</RouterLink
+							>
+						</li>
+						<li>
+							<RouterLink to="/useCase" @click="clickedCloseMenu"
+								>USE CASE</RouterLink
+							>
+						</li>
+						<li>
+							<RouterLink to="/contact" @click="clickedCloseMenu"
+								>CONTACT</RouterLink
+							>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -71,7 +87,7 @@ function clickedCloseMenu() {
 .all_menu {
 	width: 1400px;
 	margin: 0 auto;
-	padding-top: 40px;
+	padding-top: 100px;
 }
 
 .all_menu_top {

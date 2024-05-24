@@ -1,7 +1,9 @@
 <template>
 	<div class="quick_btn">
 		<RouterLink to="/contact"
-			><img :src="require('@/assets/image/quick_btn.png')"
+			><img
+				class="quick_btn_img"
+				:src="require('@/assets/image/quick_btn.png')"
 		/></RouterLink>
 	</div>
 </template>
@@ -12,7 +14,11 @@
 .quick_btn {
 	position: fixed;
 	z-index: 9999999;
-	right: 20px;
-	bottom: 10%;
+	right: 10px;
+	bottom: 3%;
+}
+
+.quick_btn_img {
+	width: 60px;
 }
 </style>

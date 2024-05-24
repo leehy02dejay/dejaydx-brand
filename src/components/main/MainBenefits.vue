@@ -14,7 +14,14 @@
 					<img :src="require('@/assets/image/main_con02-1.png')" />
 					<p class="main_con02_text01">생산성 향상</p>
 					<div class="main_con02_data">
-						<span class="main_con02_text02">30</span>
+						<CountUp
+							:start-val="0"
+							:end-val="30"
+							:duration="3"
+							v-if="isCountVisible"
+							class="main_con02_text02"
+						>
+						</CountUp>
 						<span class="main_con02_text03">%</span>
 					</div>
 				</li>
@@ -22,7 +29,14 @@
 					<img :src="require('@/assets/image/main_con02-2.png')" />
 					<p class="main_con02_text01">품질 향상</p>
 					<div class="main_con02_data">
-						<span class="main_con02_text02">43.5</span>
+						<CountUp
+							:start-val="0"
+							:decimalPlaces="1"
+							:end-val="43.5"
+							:duration="3"
+							v-if="isCountVisible"
+							class="main_con02_text02"
+						></CountUp>
 						<span class="main_con02_text03">%</span>
 					</div>
 				</li>
@@ -30,7 +44,14 @@
 					<img :src="require('@/assets/image/main_con02-3.png')" />
 					<p class="main_con02_text01">매출액 증가</p>
 					<div class="main_con02_data">
-						<span class="main_con02_text02">7.7</span>
+						<CountUp
+							:start-val="0"
+							:decimalPlaces="1"
+							:end-val="7.7"
+							:duration="3"
+							class="main_con02_text02"
+							v-if="isCountVisible"
+						></CountUp>
 						<span class="main_con02_text03">%</span>
 					</div>
 				</li>
@@ -38,7 +59,14 @@
 					<img :src="require('@/assets/image/main_con02-4.png')" />
 					<p class="main_con02_text01">원가 감소</p>
 					<div class="main_con02_data">
-						<span class="main_con02_text02">-15.9</span>
+						<CountUp
+							:start-val="0"
+							:decimalPlaces="1"
+							:end-val="-15.9"
+							:duration="3"
+							class="main_con02_text02"
+							v-if="isCountVisible"
+						></CountUp>
 						<span class="main_con02_text03">%</span>
 					</div>
 				</li>
@@ -46,7 +74,15 @@
 					<img :src="require('@/assets/image/main_con02-5.png')" />
 					<p class="main_con02_text01">납기 준수율</p>
 					<div class="main_con02_data">
-						<span class="main_con02_text02">15.5</span>
+						<CountUp
+							:start-val="0"
+							:decimalPlaces="1"
+							:end-val="15.5"
+							:duration="3"
+							class="main_con02_text02"
+							v-if="isCountVisible"
+							>15.5</CountUp
+						>
 						<span class="main_con02_text03">%</span>
 					</div>
 				</li>
@@ -54,60 +90,67 @@
 					<img :src="require('@/assets/image/main_con02-6.png')" />
 					<p class="main_con02_text01">산업재해감소</p>
 					<div class="main_con02_data">
-						<span class="main_con02_text02">-18.3</span>
+						<CountUp
+							:start-val="0"
+							:decimalPlaces="1"
+							:end-val="-18.3"
+							:duration="3"
+							class="main_con02_text02"
+							v-if="isCountVisible"
+						>
+							-18.3</CountUp
+						>
 						<span class="main_con02_text03">%</span>
 					</div>
 				</li>
 			</ul>
 		</div>
-
-		<!-- <div class="benefits-numbers-wrapper">
-			<CountUp
-				:start-val="0"
-				:end-val="30"
-				:duration="2"
-				class="benefit-numbers"
-				v-if="isCountVisible"
-			></CountUp>
-			<CountUp
-				:end-val="43.5"
-				:decimalPlaces="1"
-				:duration="3"
-				class="benefit-numbers"
-				v-if="isCountVisible"
-			></CountUp>
-			<CountUp
-				:end-val="7.7"
-				:decimalPlaces="1"
-				:duration="1"
-				class="benefit-numbers"
-				v-if="isCountVisible"
-			></CountUp>
-		</div> -->
 	</div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-// import CountUp from 'vue-countup-v3';
+import { ref, onMounted } from 'vue';
+
+import CountUp from 'vue-countup-v3';
 
 const scrollTop = ref(0);
 const isCountVisible = ref(false);
 
-function handleScroll() {
+function handleCountUpStart() {
 	scrollTop.value = document.documentElement.scrollTop;
 
-	if (scrollTop.value > 1158) {
+	if (scrollTop.value > 300) {
 		isCountVisible.value = true;
 	}
 }
 
-window.addEventListener('scroll', handleScroll, { passive: true });
+function handleCountUpEnd() {
+	scrollTop.value = document.documentElement.scrollTop;
+
+	isCountVisible.value = false;
+}
+
+onMounted(() => {
+	const observer = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					handleCountUpStart(); // 요소가 보일 때 handleCountUpStart 실행
+				} else {
+					handleCountUpEnd(); // 요소가 보이지 않을 때 handleCountUpEnd 실행
+				}
+			});
+		},
+		{ threshold: 0.1 },
+	);
+
+	const targetElement = document.querySelector('.main_con02_text01');
+	observer.observe(targetElement);
+});
 </script>
 
 <style>
 #main_con02_warp {
-	clear: both;
 	width: 100%;
 	height: 100vh;
 	background: url('/public/image/main_con02_bg.png') center top;
@@ -121,7 +164,10 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 .main_con02_data {
-	width: 100%;
+	display: flex;
+	width: 200px;
+	margin: 0 auto;
+	justify-content: center;
 	text-align: center;
 	padding-top: 10px;
 }
@@ -146,7 +192,7 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 
 .main_con02_text01 {
 	font-size: 1.2rem;
-	margin-toptop: 5px;
+	margin-top: 5px;
 	color: #fff;
 }
 
@@ -158,6 +204,8 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 .main_con02_text03 {
+	position: relative;
+	left: 15px;
 	font-size: 23px;
 	color: #24d2dc;
 	padding-top: 30px;
@@ -189,6 +237,14 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 		font-weight: bold;
 		color: #24d2dc;
 		text-align: center;
+	}
+
+	.main_con02 ul li {
+		width: 13%;
+		height: 10%;
+		border-left: 1px solid #019495;
+		text-align: center;
+		padding-top: 50px;
 	}
 }
 

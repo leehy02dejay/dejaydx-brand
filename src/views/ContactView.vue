@@ -1,18 +1,18 @@
 <template>
 	<div class="contact_container">
 		<ContactForm></ContactForm>
-		<AboutMoreBanner></AboutMoreBanner>
+		<!-- <ContactMoreBanner></ContactMoreBanner> -->
 	</div>
 </template>
 
 <script setup>
 import ContactForm from '@/components/menus/ContactForm.vue';
-import AboutMoreBanner from '@/components/menus/about/AboutMoreBanner.vue';
 </script>
 
 <style>
 .contact_container {
 	display: flex;
 	flex-direction: column;
+	padding: 50px;
 }
 </style>

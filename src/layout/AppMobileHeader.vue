@@ -5,10 +5,8 @@
 				><img :src="require('@/assets/image/m_logo.png')"
 			/></RouterLink>
 		</div>
-		<div class="menu_btn">
-			<RouterLink to="/">
-				<img :src="require('@/assets/image/m_menu.png')" />
-			</RouterLink>
+		<div class="menu_btn" @click="handleOpenMenu">
+			<img :src="require('@/assets/image/m_menu.png')" />
 		</div>
 	</div>
 	<div class="menu_bg"></div>
@@ -27,7 +25,15 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['open']);
+
+function handleOpenMenu() {
+	emit('open');
+}
+</script>
 
 <style>
 .header_m {

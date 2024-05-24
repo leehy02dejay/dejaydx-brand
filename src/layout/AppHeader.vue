@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<QuickButton></QuickButton>
-		<AppMobileHeader></AppMobileHeader>
+		<AppMobileHeader @open="handleOpenMenu"></AppMobileHeader>
 		<div class="header" :class="{ roll: isScrolled }">
 			<div class="main_top">
 				<div class="logo">
@@ -26,7 +26,7 @@
 					</ul>
 				</div>
 				<div class="allmenu_btn" @click="handleOpenMenu">
-					<img :src="require('@/assets/image/menu_btn.png')" />
+					<HamburgerButton></HamburgerButton>
 				</div>
 			</div>
 		</div>
@@ -36,6 +36,7 @@
 <script setup>
 import QuickButton from '@/components/atoms/QuickButton.vue';
 import AppMobileHeader from './AppMobileHeader.vue';
+import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
 import { ref, onMounted, onUnmounted, defineEmits, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -147,10 +148,8 @@ function handleOpenMenu() {
 .main_top {
 	/* padding-top: 10px; */
 	display: flex;
-	margin: 0 auto;
 	flex-direction: row;
 	justify-content: space-around;
-	width: 1400px;
 }
 
 .logo {
@@ -161,13 +160,11 @@ function handleOpenMenu() {
 .menu {
 	padding-top: 20px;
 	padding-left: 100px;
-	min-width: 980px;
 }
 
 .menu ul li {
 	font-family: 'GmarketSansMedium', dotum, sans-serif;
 	font-size: 17px;
-	font-weight: bold;
 	color: #3d4c2a;
 	float: left;
 }

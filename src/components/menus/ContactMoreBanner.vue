@@ -7,8 +7,8 @@
 				/></RouterLink>
 			</div>
 			<div class="fot_ban02">
-				<RouterLink to="/contact"
-					><img :src="require('@/assets/image/fot_ban02.png')"
+				<RouterLink to="/useCase"
+					><img :src="require('@/assets/image/fot_ban03.png')"
 				/></RouterLink>
 			</div>
 		</div>

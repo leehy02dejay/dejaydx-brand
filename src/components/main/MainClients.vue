@@ -9,40 +9,57 @@
 			</p>
 		</div>
 		<div class="main_con04">
-			<ul class="main_con04_logos">
-				<li><img :src="require('@/assets/image/main_con04-1.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-2.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-3.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-4.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-5.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-6.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-7.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-8.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-9.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-10.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-11.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-12.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-13.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-14.png')" /></li>
-				<li><img :src="require('@/assets/image/main_con04-15.png')" /></li>
-			</ul>
+			<div class="logosWrapper">
+				<ul class="main_con04_logos" id="roller1">
+					<li><img :src="require('@/assets/image/main_con04-1.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-2.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-3.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-4.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-5.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-6.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-7.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-8.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-9.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-10.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-11.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-12.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-13.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-14.png')" /></li>
+					<li><img :src="require('@/assets/image/main_con04-15.png')" /></li>
+				</ul>
+			</div>
 		</div>
-		<div class="main_con04_dot">
+		<!-- <div class="main_con04_dot">
 			<ul>
 				<li><img :src="require('@/assets/image/main_con04_slide.png')" /></li>
 				<li><img :src="require('@/assets/image/main_con04_slide2.png')" /></li>
 				<li><img :src="require('@/assets/image/main_con04_slide2.png')" /></li>
 			</ul>
-		</div>
+		</div> -->
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+	const list = document.querySelector('.main_con04_logos');
+	const clone = list.cloneNode(true);
+	clone.id = 'roller2';
+	document.querySelector('.logosWrapper').appendChild(clone);
+
+	const roller1 = document.querySelector('#roller1');
+	const roller2 = document.querySelector('#roller2');
+
+	roller1.style.left = '0px';
+	roller2.style.left = `100%`;
+});
+</script>
 
 <style>
 #main_con04_warp {
 	width: 100%;
-	height: 940px;
+	height: 600px;
 	background: url('/public/image/main_con04_bg.png') center top;
 	background-size: cover;
 }
@@ -51,20 +68,50 @@
 	width: 100%;
 	margin: 0 auto;
 	padding-top: 60px;
+	overflow: hidden;
 }
 
 .main_con04_logos {
-	width: 100%;
+	width: 200%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
 	justify-content: center;
+}
+
+.logosWrapper {
+	display: flex;
+	overflow: hidden;
+	width: 200%;
+}
+
+#roller1 {
+	display: flex;
+	animation: rollingleft 25s linear infinite;
+}
+
+#roller2 {
+	display: flex;
+	animation: rollingleft 25s linear infinite;
+}
+
+@keyframes rollingleft {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
 }
 
 .main_con04 ul li {
 	width: 265px;
 	margin: 7px 7px;
+}
+
+.main_con04_logos img {
+	width: 265px;
+	height: auto;
 }
 
 .main_con04_dot {
@@ -116,7 +163,7 @@
 	}
 
 	.main_con04 ul li {
-		width: 18%;
+		width: 220px;
 		margin: 7px 7px;
 	}
 
@@ -163,22 +210,14 @@
 		font-size: 20px;
 		line-height: 32px;
 		color: #7d7d7d;
-		padding-top: 10px;
+		padding-top: 50px;
 	}
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
 	#main_con04_warp {
 		width: 100%;
-		height: 540px;
-	}
-
-	.main_con04_logos {
-		max-width: 768px;
-		margin: 0 auto;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		height: 450px;
 	}
 
 	.main_con04 {
@@ -186,7 +225,7 @@
 	}
 
 	.main_con04 ul li {
-		width: 19%;
+		width: 200px;
 		margin: 2px 2px;
 	}
 
@@ -227,14 +266,14 @@
 		font-size: 30px;
 		font-weight: bold;
 		line-height: 42px;
-		padding-top: 10px;
+		padding-top: 55px;
 	}
 
 	.main_con04_text03 {
 		font-size: 18px;
 		line-height: 28px;
 		color: #7d7d7d;
-		padding-top: 10px;
+		padding-top: 20px;
 	}
 }
 
@@ -250,11 +289,9 @@
 
 	.main_con04_logos {
 		width: 100%;
-		max-width: 500px;
+		/* max-width: 500px; */
 		margin: 0 auto;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
+		/* display: flex; */
 	}
 
 	.main_con04 ul li {

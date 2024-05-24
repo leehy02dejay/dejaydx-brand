@@ -20,35 +20,39 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 const hasScrolled = ref(false);
 const scrollTop = ref(0);
 
 function handleScroll() {
 	let scrollY = document.documentElement.scrollTop > 0;
+	const main_con01 = document.querySelector('.background-circle');
+
 	if (scrollY > 0) {
 		scrollTop.value = document.documentElement.scrollTop;
 		if (!hasScrolled.value) {
-			const main_con01 = document.querySelector('.background-circle');
-			if (main_con01) {
-				hasScrolled.value = true;
-				window.scrollTo({
-					top: window.innerHeight,
-					behavior: 'smooth',
-				});
-			}
-
+			hasScrolled.value = true;
+			window.scrollTo({
+				top: window.innerHeight,
+				behavior: 'smooth',
+			});
+		}
+		if (main_con01) {
 			setTimeout(() => {
 				main_con01.classList.add('active');
 			}, 200);
 		}
 	}
-	if (scrollY === 0) {
-		hasScrolled.value = false;
-	}
+}
+if (scrollY === 0) {
+	hasScrolled.value = false;
 }
 onMounted(() => {
 	window.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onUnmounted(() => {
+	window.removeEventListener('scroll', handleScroll);
 });
 </script>
 
@@ -59,29 +63,29 @@ onMounted(() => {
 	background-size: cover;
 	position: relative; /* 상대적 위치 설정 */
 	overflow: hidden;
+	background: url('/public/image/main_con01_bg.png') no-repeat center center;
+	background-size: cover;
 }
 
-.background-circle {
+/* .background-circle {
 	position: absolute;
 	top: 80%;
 	left: 50%;
-	transform: translate(-50%, -50%) scale(0.5); /* 축소 상태에서 시작, Y축 변환을 더 아래로 조정 */
-	width: 45%;
+	transform: translate(-50%, -50%) scale(0.5); 
 	height: 100%;
 	background: url('/public/image/main_con01_bg.png') no-repeat center center;
 	background-size: cover;
-	border-radius: 100%; /* 초기에 원형 */
+	border-radius: 100%; 
 	z-index: -2;
-	transform-origin: center bottom; /* 확대/축소의 중심점을 중앙 하단으로 설정 */
-}
+	transform-origin: center bottom; 
 
 .background-circle.active {
 	animation: growCircle 0.5s ease-in-out forwards;
-}
+} */
 
-@keyframes growCircle {
+/* @keyframes growCircle {
 	0% {
-		transform: translate(-50%, -50%) scale(1); /* 애니메이션 시작 시 축소된 상태 */
+		transform: translate(-50%, -50%) scale(1);
 	}
 	99% {
 		transform: translate(-50%, -50%) scale(1.5);
@@ -97,7 +101,7 @@ onMounted(() => {
 		height: 100vh;
 		border-radius: 0;
 	}
-}
+} */
 .main_con01_title {
 	width: 100%;
 	margin: 0 auto;

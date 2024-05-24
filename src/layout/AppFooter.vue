@@ -1,42 +1,49 @@
 <template>
 	<div id="fot_warp">
-		<div class="fot_top">
-			<div>
-				<p class="fot_text01">
-					고민 하시는 게 무엇이든 DEJAY DX 에게 믿고 맡겨주세요.
-				</p>
-				<p class="fot_text02">최적의 스마트팩토리를 구현해드립니다.</p>
+		<div class="fot_content">
+			<div class="fot_top">
+				<div>
+					<p class="fot_text01">
+						고민 하시는 게 무엇이든 DEJAY DX 에게 믿고 맡겨주세요.
+					</p>
+					<p class="fot_text02">최적의 스마트팩토리를 구현해드립니다.</p>
+				</div>
+				<div class="fot_btn">
+					<RouterLink to="/contact"
+						><img :src="require('@/assets/image/fot_btn.png')"
+					/></RouterLink>
+				</div>
 			</div>
-			<div class="fot_btn">
-				<RouterLink to="/"
-					><img :src="require('@/assets/image/fot_btn.png')"
-				/></RouterLink>
+			<div class="fot">
+				<div class="fot_logo">
+					<RouterLink to="/"
+						><img :src="require('@/assets/image/logo.png')"
+					/></RouterLink>
+				</div>
+				<div class="fot_text03">
+					회사명 : 드제이디엑스 ｜ 대표명 : 안희찬 <br />
+					주소 : 서울시 구로구 디지털로 300 , 12층 (1202호)｜ 이메일 :
+					dejaydx@dejayadx.co.kr
+				</div>
+				<div class="fot_text04">
+					Copyright ⓒ 2024 DEJAY DX All rights reserved.
+				</div>
 			</div>
-		</div>
-		<div class="fot">
-			<div class="fot_logo">
-				<RouterLink to="/"
-					><img :src="require('@/assets/image/logo.png')"
-				/></RouterLink>
+			<div class="fot_top_btn" @click="moveScrollTop">
+				<img :src="require('@/assets/image/fot_top_btn.png')" />
 			</div>
-			<div class="fot_text03">
-				회사명 : 드제이디엑스 ｜ 대표명 : 안희찬 <br />
-				주소 : 서울시 구로구 디지털로 300 , 12층 (1202호)｜ 이메일 :
-				dejaydx@dejayadx.co.kr
-			</div>
-			<div class="fot_text04">
-				Copyright ⓒ 2024 DEJAY DX All rights reserved.
-			</div>
-		</div>
-		<div class="fot_top_btn">
-			<RouterLink to="/"
-				><img :src="require('@/assets/image/fot_top_btn.png')"
-			/></RouterLink>
 		</div>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+function moveScrollTop() {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+}
+</script>
 
 <style>
 #fot_warp {
@@ -46,6 +53,11 @@
 	width: 100%;
 	height: 600px;
 	background: #000;
+}
+
+.fot_content {
+	max-width: 1400px;
+	margin: 0 auto;
 }
 
 .fot_top {
@@ -65,17 +77,17 @@
 }
 
 .fot_text01 {
-	font-size: 40px;
+	font-size: 25px;
 }
 
 .fot_text02 {
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: bold;
 	padding-top: 10px;
 }
 
 .fot_text03 {
-	font-size: 20px;
+	font-size: 14px;
 	line-height: 32px;
 	color: #656565;
 	padding-top: 30px;
@@ -103,5 +115,6 @@
 	position: absolute;
 	right: 8%;
 	top: 60px;
+	cursor: pointer;
 }
 </style>
