@@ -1,15 +1,41 @@
 <template>
 	<div id="main_con01_warp">
 		<div class="main_con01_title">
-			<p class="main_con01_text01">SERVICE PROCESS</p>
-			<p class="main_con01_text02">
+			<p
+				v-if="!isMiniMobile"
+				class="main_con01_text01"
+				data-aos="fade-up"
+				data-aos-duration="1000"
+			>
+				SERVICE PROCESS
+			</p>
+			<p v-if="isMiniMobile" class="main_con01_text01">SERVICE PROCESS</p>
+			<p
+				v-if="!isMiniMobile"
+				class="main_con01_text02"
+				data-aos="fade-up"
+				data-aos-delay="500"
+				data-aos-duration="800"
+			>
 				<span style="font-weight: bold">스마트팩토리 도입</span>은 <br />
 				올바른 프로세스 분석 설계가 가장 중요합니다.
 			</p>
-			<p class="main_con01_text03">
+			<p class="main_con01_text02" v-if="isMiniMobile">
+				<span style="font-weight: bold">스마트팩토리 도입</span>은 <br />
+				올바른 프로세스 분석 설계가 가장 중요합니다.
+			</p>
+			<p class="main_con01_text03" v-if="!isMiniMobile">
 				체계화된 구축 진행 프로세스를 활용하여 해당 공장의 공정에 필요한 기능 및
 				구현 범위를<span class="br_pc"></span>
 				컨설팅을 통해 확정한 후, 이에 맞는 최적의 시스템 구현을 제공합니다.
+			</p>
+
+			<p class="main_con01_text03" v-if="isMiniMobile">
+				<span>체계화된 구축 진행 프로세스를 활용하여</span
+				><span>
+					해당 공장의 공정에 필요한 기능 및 구현 범위를 컨설팅을 통해
+				</span>
+				<span> 확정한 후, 이에 맞는 최적의 시스템 구현을 제공합니다.</span>
 			</p>
 		</div>
 		<div class="main_con01">
@@ -20,40 +46,58 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
-const hasScrolled = ref(false);
-const scrollTop = ref(0);
+import { ref, onMounted, onUnmounted } from 'vue';
 
-function handleScroll() {
-	let scrollY = document.documentElement.scrollTop > 0;
-	const main_con01 = document.querySelector('.background-circle');
+const isMiniMobile = ref(window.innerWidth <= 435);
 
-	if (scrollY > 0) {
-		scrollTop.value = document.documentElement.scrollTop;
-		if (!hasScrolled.value) {
-			hasScrolled.value = true;
-			window.scrollTo({
-				top: window.innerHeight,
-				behavior: 'smooth',
-			});
-		}
-		if (main_con01) {
-			setTimeout(() => {
-				main_con01.classList.add('active');
-			}, 200);
-		}
-	}
-}
-if (scrollY === 0) {
-	hasScrolled.value = false;
-}
+const onResize = () => {
+	isMiniMobile.value = window.innerWidth <= 435;
+};
+
 onMounted(() => {
-	window.addEventListener('scroll', handleScroll, { passive: true });
+	window.addEventListener('resize', onResize);
 });
 
 onUnmounted(() => {
-	window.removeEventListener('scroll', handleScroll);
+	window.removeEventListener('resize', onResize);
 });
+// import { onMounted, onUnmounted, ref } from 'vue';
+// const hasScrolled = ref(false);
+// const scrollTop = ref(0);
+
+// function handleScroll() {
+// 	let scrollY = document.documentElement.scrollTop > 0;
+// const main_con01 = document.querySelector('.background-circle');
+
+// if (scrollY > 0) {
+// 	scrollTop.value = document.documentElement.scrollTop;
+// 	if (!hasScrolled.value) {
+// 		window.scrollTo({
+// 			top: window.innerHeight,
+// 			behavior: 'smooth',
+// 		});
+
+// 		hasScrolled.value = true;
+// 	}
+// if (main_con01) {
+// 	setTimeout(() => {
+// 		main_con01.classList.add('active');
+// 	}, 200);
+// }
+// 	}
+// }
+
+// if (scrollY === 0) {
+// 	hasScrolled.value = false;
+// 	window.addEventListener('scroll', handleScroll, { passive: true });
+// }
+// onMounted(() => {
+// 	window.addEventListener('scroll', handleScroll, { passive: true });
+// });
+
+// onUnmounted(() => {
+// 	window.removeEventListener('scroll', handleScroll);
+// });
 </script>
 
 <style>
@@ -106,7 +150,7 @@ onUnmounted(() => {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	padding-top: 10%;
+	padding-top: 7%;
 }
 
 .main_con01 {
@@ -119,6 +163,7 @@ onUnmounted(() => {
 .main_con01 img {
 	max-width: 75%;
 	height: auto;
+	margin-top: 20px;
 }
 
 .main_con01_text01 {
@@ -277,6 +322,47 @@ onUnmounted(() => {
 		line-height: 17px;
 		color: #d0d0d0;
 		padding-top: 10px;
+	}
+}
+
+@media screen and (max-width: 435px) {
+	.main_con01_title {
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+		padding-top: 50%;
+	}
+
+	.main_con01_text01 {
+		text-align: left;
+		width: 100%;
+		margin: 0 auto;
+		font-size: 0.8rem;
+		font-weight: 500;
+	}
+
+	.main_con01_text02 {
+		text-align: left;
+		font-size: 1.2rem;
+		line-height: 24px;
+		color: #fff;
+		padding-top: 10px;
+	}
+
+	.main_con01_text03 {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		font-size: 0.9rem;
+		line-height: 34px;
+		color: #d0d0d0;
+		padding-top: 30px;
+	}
+
+	.main_con01 img {
+		max-width: 98%;
+		height: auto;
+		margin-top: 13%;
 	}
 }
 </style>

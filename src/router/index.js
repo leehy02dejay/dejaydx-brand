@@ -35,6 +35,11 @@ const routes = [
 		component: UseCaseDetailHome,
 		children: [
 			{
+				path: '',
+				name: 'UseCaseDetailHomeNotFound',
+				component: NotFound,
+			},
+			{
 				path: 'ems',
 				name: 'UseCaseEMSDetail',
 				component: UseCaseEMSDetail,

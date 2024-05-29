@@ -16,9 +16,9 @@
 <style>
 .scroll-line-container {
 	color: white;
-	position: absolute;
+	position: relative;
 	left: 5%;
-	bottom: 5%;
+	bottom: 10%;
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
@@ -81,6 +81,30 @@
 	}
 	100% {
 		background-position: bottom;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.scroll-down-text {
+		font-size: 10px;
+	}
+
+	.scroll-line {
+		height: 30px;
+	}
+}
+
+@media screen and (max-width: 435px) {
+	.scroll-line-container {
+		color: white;
+		position: relative;
+		left: 5%;
+		bottom: 15%;
+		display: flex;
+		flex-direction: column;
+		z-index: 10;
+		overflow-y: hidden;
+		width: 200px;
 	}
 }
 </style>

@@ -105,7 +105,15 @@
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+// import { onMounted, defineEmits } from 'vue';
+
+// const emit = defineEmits(['setHomeTitle']);
+
+// function updateHomeTitle() {
+// 	emit('setHomeTitle')
+// }
+</script>
 
 <style>
 .sub42_con01 {

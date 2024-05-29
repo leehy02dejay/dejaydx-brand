@@ -107,6 +107,9 @@ const useCaseContents = [
 ];
 
 onMounted(() => {
+	const carouselViewPort = document.querySelector('.carousel__viewport');
+	carouselViewPort.style.height = 'auto !important';
+
 	const observer = new IntersectionObserver(
 		entries => {
 			entries.forEach(entry => {
@@ -126,18 +129,10 @@ onMounted(() => {
 </script>
 
 <style>
-.carousel {
-	height: 100%;
-}
-
 .carousel__viewport {
 	overflow: hidden;
-	height: 100%;
 }
 
-.carousel__track {
-	height: 100%;
-}
 #main_con03_warp {
 	position: relative;
 	width: 100%;
@@ -399,7 +394,6 @@ onMounted(() => {
 		position: relative;
 		padding-top: 180px;
 		text-align: center;
-		height: 100%;
 	}
 
 	.main_con03_left {
@@ -619,6 +613,15 @@ onMounted(() => {
 
 	.main_con03_arrow_right img {
 		width: 100%;
+	}
+
+	@media screen and (max-width: 435px) {
+		#main_con03_warp {
+			min-height: 1000px;
+			background: url('/public/image/main_con03_bg.png') center top;
+			background-size: cover;
+			overflow: hidden;
+		}
 	}
 }
 </style>

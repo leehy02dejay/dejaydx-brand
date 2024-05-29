@@ -1,32 +1,43 @@
 <template>
 	<div>
-		<div class="sub21_con02_title">
-			<p class="sub21_text08">MES</p>
-			<p class="sub21_text06">Manufacturing Execution System</p>
-			<p class="sub21_text02">
-				MES는 생산관리 시스템 으로 기업의 생산 현장에서 작업일정, 작업지시,
-				품질관리, 작업 실적 집계 등 <br />
-				제반 활동을 지원하기 위한 관리 시스템 입니다.
-			</p>
-		</div>
+		<div class="mes_container">
+			<div
+				class="sub21_con02_title"
+				data-aos="fade-down"
+				data-aos-offset="300"
+				data-aos-duration="500"
+			>
+				<p class="sub21_text08">MES</p>
+				<p class="sub21_text06">Manufacturing Execution System</p>
+				<p class="sub21_text02">
+					MES는 생산관리 시스템 으로 기업의 생산 현장에서 작업일정, 작업지시,
+					품질관리, 작업 실적 집계 등 <br />
+					제반 활동을 지원하기 위한 관리 시스템 입니다.
+				</p>
+			</div>
 
-		<div class="sub12_con02_stitle">
-			<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> MES 특장점
-		</div>
+			<div class="sub12_con02_stitle">
+				<img :src="require('@/assets/image/sub21_con01_stitle.png')" /> MES
+				특장점
+			</div>
 
-		<div class="sub12_con02">
-			<ul>
-				<li><img :src="require('@/assets/image/sub21_con02-1.png')" /></li>
-				<li><img :src="require('@/assets/image/sub21_con02-2.png')" /></li>
-				<li><img :src="require('@/assets/image/sub21_con02-3.png')" /></li>
-				<li><img :src="require('@/assets/image/sub21_con02-4.png')" /></li>
-			</ul>
+			<div class="sub12_con02">
+				<ul>
+					<li><img :src="require('@/assets/image/sub21_con02-1.png')" /></li>
+					<li><img :src="require('@/assets/image/sub21_con02-2.png')" /></li>
+					<li><img :src="require('@/assets/image/sub21_con02-3.png')" /></li>
+					<li><img :src="require('@/assets/image/sub21_con02-4.png')" /></li>
+				</ul>
+			</div>
 		</div>
-
-		<div style="clear: both"></div>
 
 		<div id="sub21_con03_warp">
-			<div class="sub21_con03_title">
+			<div
+				class="sub21_con03_title"
+				data-aos="fade-down"
+				data-aos-offset="300"
+				data-aos-duration="500"
+			>
 				<p class="sub21_text09">EMS</p>
 				<p class="sub21_text06">Environmental Management System</p>
 				<p class="sub21_text02">
@@ -50,7 +61,12 @@
 		</div>
 
 		<div id="sub21_con04_warp">
-			<div class="sub21_con04_title">
+			<div
+				class="sub21_con04_title"
+				data-aos="fade-down"
+				data-aos-offset="300"
+				data-aos-duration="500"
+			>
 				<p class="sub21_text10">스마트팩토리 기대효과</p>
 				<p class="sub21_text12">
 					스마트한 공장, 효율적인 관리! 관리 사각지대 감소로<span
@@ -91,7 +107,12 @@
 			</div>
 		</div>
 		<div id="sub21_con05_warp">
-			<div class="sub21_con05_title">
+			<div
+				class="sub21_con05_title"
+				data-aos="fade-down"
+				data-aos-offset="300"
+				data-aos-duration="500"
+			>
 				<p class="sub21_text11">스마트 팩토리 5대 요건</p>
 				<p class="sub21_text02">
 					아래는 스마트공장을 구성하고 수준별로 발전시킴에 있어서<span
@@ -195,6 +216,10 @@
 	margin-top: 40px;
 }
 
+.mes_container {
+	height: 1000px;
+}
+
 #sub21_con03_warp {
 	clear: both;
 	width: 100%;
@@ -240,7 +265,7 @@
 
 .sub21_text09 {
 	margin-top: 50px;
-	font-size: 40px;
+	font-size: 50px;
 	letter-spacing: -1px;
 	font-weight: bold;
 }

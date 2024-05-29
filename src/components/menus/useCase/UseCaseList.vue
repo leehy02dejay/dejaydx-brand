@@ -1,10 +1,12 @@
 <template>
 	<div>
-		<div class="sub41_con_title">
+		<div class="sub41_con_title" data-aos="fade-down" data-aos-duration="1000">
 			<p class="sub41_text01">도입사례</p>
 		</div>
 
 		<div
+			data-aos="fade-up"
+			data-aos-duration="1000"
 			class="sub41_con01"
 			@mouseover="changeHoveredState(0, true)"
 			@mouseleave="changeHoveredState(0, false)"
@@ -37,6 +39,8 @@
 		<div style="clear: both"></div>
 
 		<div
+			data-aos="fade-up"
+			data-aos-duration="1000"
 			class="sub41_con02"
 			@mouseover="changeHoveredState(1, true)"
 			@mouseleave="changeHoveredState(1, false)"
@@ -75,6 +79,8 @@
 		<div style="clear: both"></div>
 
 		<div
+			data-aos="fade-up"
+			data-aos-duration="1000"
 			class="sub41_con02"
 			@mouseover="changeHoveredState(2, true)"
 			@mouseleave="changeHoveredState(2, false)"
@@ -107,6 +113,8 @@
 		<div style="clear: both"></div>
 
 		<div
+			data-aos="fade-up"
+			data-aos-duration="1000"
 			class="sub41_con02"
 			@mouseover="changeHoveredState(3, true)"
 			@mouseleave="changeHoveredState(3, false)"
@@ -138,6 +146,8 @@
 		<div style="clear: both"></div>
 		<div
 			class="sub41_con02"
+			data-aos="fade-up"
+			data-aos-duration="1000"
 			@mouseover="changeHoveredState(4, true)"
 			@mouseleave="changeHoveredState(4, false)"
 		>

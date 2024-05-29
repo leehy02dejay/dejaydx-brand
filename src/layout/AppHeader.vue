@@ -26,7 +26,7 @@
 					</ul>
 				</div>
 				<div class="allmenu_btn" @click="handleOpenMenu">
-					<HamburgerButton></HamburgerButton>
+					<img :src="require('@/assets/image/menu_btn.png')" />
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,6 @@
 <script setup>
 import QuickButton from '@/components/atoms/QuickButton.vue';
 import AppMobileHeader from './AppMobileHeader.vue';
-import HamburgerButton from '@/components/atoms/HamburgerButton.vue';
 import { ref, onMounted, onUnmounted, defineEmits, watch } from 'vue';
 import { useRoute } from 'vue-router';
 

@@ -4,7 +4,7 @@
 			<p class="sub42_text01">도입사례</p>
 		</div>
 
-		<div class="sub42_list_title">설비 관리 시스템 구축사례</div>
+		<div class="sub42_list_title">타이틀</div>
 		<router-view></router-view>
 		<div class="sub42_con03">
 			<div class="sub42_con03_text">
@@ -23,6 +23,17 @@
 
 <script setup>
 import AboutMoreBanner from '@/components/menus/about/AboutMoreBanner.vue';
+import { ref, onMounted } from 'vue';
+
+const useCaseTitle = ref('');
+
+const updateUseCaseTitle = title => {
+	useCaseTitle.value = title;
+};
+
+onMounted(() => {
+	updateUseCaseTitle();
+});
 </script>
 
 <style>

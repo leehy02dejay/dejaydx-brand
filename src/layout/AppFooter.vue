@@ -21,9 +21,9 @@
 					/></RouterLink>
 				</div>
 				<div class="fot_text03">
-					회사명 : 드제이디엑스 ｜ 대표명 : 안희찬 <br />
-					주소 : 서울시 구로구 디지털로 300 , 12층 (1202호)｜ 이메일 :
-					dejaydx@dejayadx.co.kr
+					회사명 : 드제이 ｜ 대표명 : 이용훈 <br />
+					주소 : 서울특별시 마포구 월드컵북로 5길 12 2층｜ 이메일 :
+					hcan@dejay.co.kr
 				</div>
 				<div class="fot_text04">
 					Copyright ⓒ 2024 DEJAY DX All rights reserved.
@@ -51,8 +51,9 @@ function moveScrollTop() {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 600px;
+	height: 100%;
 	background: #000;
+	padding-bottom: 20px;
 }
 
 .fot_content {
@@ -74,6 +75,7 @@ function moveScrollTop() {
 	margin: 0 auto;
 	padding-top: 30px;
 	color: #656565;
+	height: 100%;
 }
 
 .fot_text01 {
@@ -113,8 +115,50 @@ function moveScrollTop() {
 
 .fot_top_btn {
 	position: absolute;
-	right: 8%;
+	right: 4%;
 	top: 60px;
 	cursor: pointer;
+}
+
+@media screen and (max-width: 435px) {
+	.fot_text01 {
+		font-size: 15px;
+	}
+
+	.fot_text02 {
+		font-size: 20px;
+		font-weight: bold;
+		padding-top: 10px;
+	}
+
+	.fot_text03 {
+		font-size: 10px;
+		line-height: 32px;
+		color: #656565;
+		padding-top: 30px;
+	}
+
+	.fot_text04 {
+		font-size: 10px;
+		color: #656565;
+		padding-top: 10px;
+	}
+
+	.fot_content {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+
+	.fot_top_btn {
+		position: absolute;
+		right: 3%;
+		top: 60px;
+		cursor: pointer;
+	}
+
+	.fot_btn a img {
+		width: 10rem;
+		padding-top: 0.5rem;
+	}
 }
 </style>

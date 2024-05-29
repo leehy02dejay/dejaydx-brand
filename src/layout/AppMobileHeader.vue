@@ -58,8 +58,8 @@ function handleOpenMenu() {
 	width: 100%;
 }
 .menu_btn {
-	float: right;
-	width: 40px;
+	position: absolute;
+	right: 1%;
 	text-align: right;
 	padding: 8px;
 	margin-right: 10px;
@@ -72,7 +72,6 @@ function handleOpenMenu() {
 .menu_bg {
 	width: 100%;
 	height: 100%;
-
 	position: absolute;
 	top: 0;
 	display: none;

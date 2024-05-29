@@ -172,3 +172,29 @@ select:focus {
 .fp-watermark {
 	display: none !important;
 }
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.mainHome {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.footer {
+	background-color: #f1f1f1;
+	padding: 20px;
+	text-align: center;
+	margin-top: auto;
+}
+
+/* mobile-size iPhone 14ProMax 기준 */
+@media screen and (max-width: 435px) {
+	body {
+		overflow-x: hidden;
+	}
+}
