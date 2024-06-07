@@ -2,11 +2,14 @@
 <html>
 	<meta charset="UTF-8" />
 	<script type="text/javascript">
+		var origin = window.location.origin;
 		var path = window.location.pathname;
 		var query = window.location.search;
 		var hash = window.location.hash;
-		var target = '/' + path + query + hash; // 프로젝트 경로로 설정
-		window.location.replace(target);
+		var target = origin + path + query + hash; // 현재 경로 유지
+		if (window.location.href !== target) {
+			window.location.replace(target);
+		}
 	</script>
 	<body></body>
 </html>
