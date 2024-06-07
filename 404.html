@@ -6,10 +6,8 @@
 		var path = window.location.pathname;
 		var query = window.location.search;
 		var hash = window.location.hash;
-		var target = origin + path + query + hash; // 현재 경로 유지
-		if (window.location.href !== target) {
-			window.location.replace(target);
-		}
+		var newPath = '/index.html' + query + hash;
+		window.location.replace(newPath);
 	</script>
 	<body></body>
 </html>
