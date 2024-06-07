@@ -2,11 +2,11 @@
 <html>
 	<meta charset="UTF-8" />
 	<script type="text/javascript">
-		// Preserve the path and query parameters when redirecting
 		var path = window.location.pathname;
 		var query = window.location.search;
 		var hash = window.location.hash;
-		window.location.href = '/' + path + query + hash;
+		var target = '/dejaydx-brand' + path + query + hash; // 프로젝트 경로로 설정
+		window.location.replace(target);
 	</script>
 	<body></body>
 </html>
