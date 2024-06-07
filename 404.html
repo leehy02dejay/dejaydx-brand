@@ -1,7 +1,12 @@
 <!doctype html>
 <html>
-	<head>
-		<meta http-equiv="refresh" content="0;url=/" />
-	</head>
+	<meta charset="UTF-8" />
+	<script type="text/javascript">
+		// Preserve the path and query parameters when redirecting
+		var path = window.location.pathname;
+		var query = window.location.search;
+		var hash = window.location.hash;
+		window.location.href = '/' + path + query + hash;
+	</script>
 	<body></body>
 </html>
